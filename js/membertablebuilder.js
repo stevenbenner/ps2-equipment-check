@@ -32,10 +32,10 @@ function MemberTableBuilder(table, rules) {
 				cell.text(rule);
 				row2.append(cell);
 			}
-
-			table.append(row1);
-			table.append(row2);
 		}
+
+		table.append(row1);
+		table.append(row2);
 
 		table.removeClass();
 		table.addClass(getSlug(Object.keys(rules)[0]) + '-only');
