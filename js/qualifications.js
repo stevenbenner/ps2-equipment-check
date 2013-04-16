@@ -91,6 +91,8 @@ var qualifications = {
 				qualified = false; //equip.hsnv && equip.suppressor && equip.trac5s && equip.tankmine && equip.ubgrenade && equip.ubsmoke;
 
 			if (equip.has(items.weapon.trac5s) &&
+				equip.has(items.weapon.trac5s.hsnv) &&
+				equip.has(items.weapon.trac5s.suppressor) &&
 				equip.has(items.weapon.trac5s.grenadeLauncher) &&
 				equip.has(items.weapon.trac5s.smokeLauncher) &&
 				equip.has(items.consumable.tankMine) &&
@@ -103,6 +105,7 @@ var qualifications = {
 
 			if (qualified) {
 				cell.append($('<span>').text('[ ' + equip.get(items.weapon.trac5s).name.en + ' ]'));
+				cell.append($('<span>').text('[ ' + equip.get(items.weapon.trac5s.hsnv).name.en + ' | ' + equip.get(items.weapon.trac5s.suppressor).name.en + ' ]'));
 				cell.append($('<span>').text('[ ' + equip.get(items.weapon.trac5s.grenadeLauncher).name.en + ' | ' + equip.get(items.weapon.trac5s.smokeLauncher).name.en + ' ]'));
 				cell.append($('<span>').text('[ ' + equip.get(items.consumable.tankMine).name.en + ' ]'));
 				cell.append($('<span>').text('[ ' + equip.get(items.class.engineer.flakArmor).name.en + ' ]'));

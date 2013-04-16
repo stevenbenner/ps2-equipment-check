@@ -131,7 +131,9 @@ var items = {
 		trac5s: {
 			id: 7192,
 			grenadeLauncher: 9322,
-			smokeLauncher: 9329
+			smokeLauncher: 9329,
+			hsnv: 9323,
+			suppressor: 9330
 		},
 		m77: 25000,
 		tsar: 25001,
