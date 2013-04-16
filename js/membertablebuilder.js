@@ -5,37 +5,26 @@ function MemberTableBuilder(table, rules) {
 	}
 
 	this.buildHeader = function() {
-		var row1 = $('<tr>'),
-			row2 = $('<tr>'),
+		var headerRow = $('<tr>'),
 			squad,
 			squadSlug,
 			rule,
 			cell;
 
-		row1.append($('<th>'));
-		row1.append($('<th>'));
-		row2.append($('<th>').text('Name'));
-		row2.append($('<th>').text('BR'));
+		headerRow.append($('<th>').text('Name'));
+		headerRow.append($('<th>').text('BR'));
 
 		for (squad in rules) {
 			squadSlug = getSlug(squad);
-			cell = $('<th>');
-			cell.attr('colspan', Object.keys(rules[squad]).length);
-			cell.addClass(squadSlug);
-			cell.text(squad);
-
-			row1.append(cell);
-
 			for (rule in rules[squad]) {
 				cell = $('<th>');
 				cell.addClass(squadSlug);
 				cell.text(rule);
-				row2.append(cell);
+				headerRow.append(cell);
 			}
 		}
 
-		table.append(row1);
-		table.append(row2);
+		table.append(headerRow);
 
 		table.removeClass();
 		table.addClass(getSlug(Object.keys(rules)[0]) + '-only');
