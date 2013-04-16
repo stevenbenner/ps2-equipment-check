@@ -1,6 +1,6 @@
 var qualifications = {
 
-	alpha: {
+	'alpha squad': {
 
 		lightAssault: function(equip) {
 			var cell = $('<td>')
@@ -175,7 +175,7 @@ var qualifications = {
 
 	},
 
-	bravo: {
+	'bravo squad': {
 
 		heavyAssault: function(equip) {
 			var cell = $('<td>')
@@ -368,7 +368,7 @@ var qualifications = {
 
 	},
 /*
-	charlie: {
+	'charlie squad': {
 		engineer: function(equip) {
 			return $('<td>').text('---');
 		},
@@ -377,7 +377,7 @@ var qualifications = {
 		}
 	},
 
-	delta: {
+	'delta squad': {
 		max: function(equip) {
 			return $('<td>').text('---');
 		},

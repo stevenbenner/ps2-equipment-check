@@ -1,8 +1,14 @@
 function MemberTableBuilder(table, rules) {
+
+	function getSlug(str) {
+		return str.replace(/\s/, '-');
+	}
+
 	this.buildHeader = function() {
 		var row1 = $('<tr>'),
 			row2 = $('<tr>'),
 			squad,
+			squadSlug,
 			rule,
 			cell;
 
@@ -12,16 +18,17 @@ function MemberTableBuilder(table, rules) {
 		row2.append($('<th>').text('BR'));
 
 		for (squad in rules) {
+			squadSlug = getSlug(squad);
 			cell = $('<th>');
 			cell.attr('colspan', Object.keys(rules[squad]).length);
-			cell.addClass(squad);
+			cell.addClass(squadSlug);
 			cell.text(squad);
 
 			row1.append(cell);
 
 			for (rule in rules[squad]) {
 				cell = $('<th>');
-				cell.addClass(squad);
+				cell.addClass(squadSlug);
 				cell.text(rule);
 				row2.append(cell);
 			}
@@ -35,6 +42,7 @@ function MemberTableBuilder(table, rules) {
 		var row = $('<tr>'),
 			nameColumn = $('<td>'),
 			squad,
+			squadSlug,
 			rule,
 			cell;
 
@@ -45,13 +53,15 @@ function MemberTableBuilder(table, rules) {
 		row.append($('<td>').text(level));
 
 		for (squad in rules) {
+			squadSlug = getSlug(squad);
 			for (rule in rules[squad]) {
 				cell = rules[squad][rule](equipment);
-				cell.addClass(squad);
+				cell.addClass(squadSlug);
 				row.append(cell);
 			}
 		}
 
 		table.append(row);
 	}
+
 }
