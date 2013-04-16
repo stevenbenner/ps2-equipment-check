@@ -36,6 +36,56 @@ function MemberTableBuilder(table, rules) {
 			table.append(row1);
 			table.append(row2);
 		}
+
+		table.removeClass();
+		table.addClass(getSlug(Object.keys(rules)[0]) + '-only');
+	};
+
+	this.buildNav = function(nav) {
+		var hideOfflineCheck = nav.find('#hide-offline'),
+			squad,
+			squadSlug,
+			navButton;
+
+		for (squad in rules) {
+			squadSlug = getSlug(squad);
+			navButton = $('<li>');
+
+			navButton.addClass('primary');
+			navButton.text(squad);
+
+			navButton.on('click', (function(squadSlug) {
+				return function() {
+					var nooffline = table.hasClass('nooffline');
+
+					nav.find('li.primary').removeClass('selected');
+					$(this).addClass('selected');
+
+					table.removeClass();
+					table.addClass(squadSlug + '-only');
+					if (nooffline) {
+						table.addClass('nooffline');
+					}
+				};
+			}(squadSlug)));
+
+			nav.append(navButton);
+		}
+
+		function handleOfflineCheckbox() {
+			if (hideOfflineCheck.is(':checked')) {
+				table.addClass('nooffline');
+				hideOfflineCheck.parent().addClass('selected');
+			} else {
+				table.removeClass('nooffline');
+				hideOfflineCheck.parent().removeClass('selected');
+			}
+		}
+		hideOfflineCheck.on('click', handleOfflineCheckbox);
+		table.removeClass('nooffline');
+		handleOfflineCheckbox();
+
+		nav.find('li.primary').first().addClass('selected');
 	};
 
 	this.addMember = function(name, equipment, online, id, level) {

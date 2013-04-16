@@ -2,9 +2,9 @@ var OUTFIT_ID = '37511414368206626';
 
 // onready
 $(function() {
-	var membersTable = $('#members'),
+	var navBar = $('nav ul'),
+		membersTable = $('#members'),
 		statusText = $('#status'),
-		hideOfflineCheck = $('#hide-offline'),
 		memberLoader = new MemberLoader(OUTFIT_ID),
 		tableBuilder = new MemberTableBuilder(membersTable, qualifications),
 		membersLoaded = 0;
@@ -28,17 +28,8 @@ $(function() {
 		$('#status').text('Loaded ' + membersLoaded + ' of ' + memberLoader.memberCount + ' members');
 	});
 
-	function handleOfflineCheckbox() {
-		if (hideOfflineCheck.is(':checked')) {
-			membersTable.addClass('nooffline');
-		} else {
-			membersTable.removeClass('nooffline');
-		}
-	}
-	hideOfflineCheck.on('click', handleOfflineCheckbox);
-	membersTable.removeClass();
-	handleOfflineCheckbox()
-
 	tableBuilder.buildHeader();
+	tableBuilder.buildNav(navBar);
+
 	memberLoader.start();
 });
