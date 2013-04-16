@@ -11,10 +11,10 @@ var qualifications = {
 
 			if (qualified) {
 				cell.append($('<span>').text('[ ' + equip.get(items.consumable.c4).name.en + ' ]'));
-				cell.append($('<span>').text('[ ' + equip.get(items.class.lightAssault.flakArmor).name.en + ' ]'));
 				if (equip.has(items.consumable.flashGrenade)) {
 					cell.append($('<span>').text('[ ' + equip.get(items.consumable.flashGrenade).name.en + ' ]'));
 				}
+				cell.append($('<span>').text('[ ' + equip.get(items.class.lightAssault.flakArmor).name.en + ' ]'));
 			}
 
 			return cell;
