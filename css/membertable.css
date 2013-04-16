@@ -1,0 +1,68 @@
+/* Member Table Styles */
+table {
+	background-color: rgba(0, 36, 40, 0.5);
+	border-collapse: collapse;
+	color: #fff;
+	min-width: 100%;
+}
+td, th {
+	border: 1px solid #197576;
+	padding: 3px 6px;
+	vertical-align: top;
+}
+th {
+	color: #4fd4e0;
+	font-weight: normal;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+td:first-child, th:first-child {
+	background-color: rgba(12, 52, 57, 0.5);
+	white-space: nowrap;
+}
+td:nth-child(2) {
+	text-align: center;
+}
+
+/* Squad Tab Display Settings */
+.alpha-squad-only .bravo-squad, .alpha-squad-only .charlie-squad, .alpha-squad-only .delta-squad,
+.bravo-squad-only .alpha-squad, .bravo-squad-only .charlie-squad, .bravo-squad-only .delta-squad,
+.charlie-squad-only .alpha-squad, .charlie-squad-only .bravo-squad, .charlie-squad-only .delta-squad,
+.delta-squad-only .alpha-squad, .delta-squad-only .bravo-squad, .delta-squad-only .charlie-squad {
+	display: none;
+}
+
+/* Hide Offline Display Settings */
+.nooffline .offline {
+	display: none;
+}
+
+/* Online/Offline Status Indicator */
+.status {
+	border: 1px solid #555;
+	border-radius: 3px;
+	display: inline-block;
+	margin-right: 5px;
+	width: 8px;
+	height: 8px;
+}
+.online .status {
+	background-color: #0f0;
+}
+.offline .status {
+	background-color: #d00;
+}
+
+/* Equipment Output */
+.ok {
+	color: #afa;
+	font-weight: bold;
+}
+.notok {
+	color: #faa;
+}
+td > span {
+	display: block;
+	font-size: 10px;
+	font-weight: normal;
+}
