@@ -1,0 +1,42 @@
+/* Status Box Styles */
+#status {
+	background-color: rgba(12, 52, 57, 0.5);
+	border: 1px solid #197576;
+	display: none;
+	left: 20px;
+	padding: 15px 30px;
+	position: absolute;
+	top: -1px;
+	width: 300px;
+}
+
+/* Loading Spinner */
+@keyframes spinner {
+	25% {
+		transform: rotate(270deg);
+	}
+	50% {
+		transform: rotate(90deg);
+	}
+	75% {
+		transform: rotate(360deg);
+	}
+	100% {
+		transform: rotate(180deg);
+	}
+}
+#status div {
+	animation: spinner 2s infinite alternate;
+	background: linear-gradient(#197576 50%, #4fd4e0 50%), linear-gradient(#4fd4e0 50%, #197576 50%);
+	background-position: 0 0, 100% 0;
+	background-repeat: no-repeat;
+	background-size: 50% 100%, 50% 100%;
+	border-radius: 50%;
+	display: inline-block;
+	margin-right: 15px;
+	opacity: 0.7;
+	position: relative;
+	vertical-align: bottom;
+	width: 20px;
+	height: 20px;
+}
