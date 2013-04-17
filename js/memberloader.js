@@ -4,7 +4,8 @@ var OUTFIT_URL = 'http://census.soe.com/get/ps2-beta/outfit/',
 
 function MemberLoader(outfitId, concurrency) {
 	var memberList = [],
-		me = this;
+		me = this,
+		activeConnections = 0;
 
 	// public properties
 	me.memberCount = 0;
@@ -38,8 +39,13 @@ function MemberLoader(outfitId, concurrency) {
 		var characterId = memberList.shift();
 
 		if (!characterId) {
+			if (activeConnections === 0) {
+				me.emit('done');
+			}
 			return;
 		}
+
+		activeConnections++;
 
 		$.ajax({
 			type: 'GET',
@@ -61,6 +67,7 @@ function MemberLoader(outfitId, concurrency) {
 			if (!charData.character_list.length) {
 				//console.log(charData);
 			}
+			activeConnections--;
 			me.emit('member', [ charData ]);
 			me.fetchNextMember();
 		});
