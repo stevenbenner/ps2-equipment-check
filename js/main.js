@@ -19,11 +19,8 @@ $(function() {
 			return;
 		}
 		tableBuilder.addMember(
-			character.character_list[0].name.first,
-			new CharacterItems(character.character_list[0].item_list),
-			character.character_list[0].online_status,
-			character.character_list[0].character_id,
-			character.character_list[0].experience.length ? character.character_list[0].experience[0].rank : 'N/A'
+			character.character_list[0],
+			new CharacterItems(character.character_list[0].item_list)
 		);
 		membersLoaded++;
 		statusText.text('Loading members: ' + membersLoaded + ' of ' + memberLoader.memberCount);

@@ -77,7 +77,7 @@ function MemberTableBuilder(table, rules) {
 		nav.find('li.primary').first().addClass('selected');
 	};
 
-	this.addMember = function(name, equipment, online, id, level) {
+	this.addMember = function(character, equipment) {
 		var row = $('<tr>'),
 			nameColumn = $('<td>'),
 			squad,
@@ -86,10 +86,10 @@ function MemberTableBuilder(table, rules) {
 			cell;
 
 		nameColumn.append($('<span>').addClass('status'));
-		nameColumn.append($('<a>').text(name).attr('href', 'https://players.planetside2.com/#!/' + id).attr('target', '_blank'));
-		row.addClass(online === '1' ? 'online' : 'offline');
+		nameColumn.append($('<a>').text(character.name.first).attr('href', 'https://players.planetside2.com/#!/' + character.character_id).attr('target', '_blank'));
+		row.addClass(character.online_status === '1' ? 'online' : 'offline');
 		row.append(nameColumn);
-		row.append($('<td>').text(level));
+		row.append($('<td>').text(character.experience.length ? character.experience[0].rank : 'N/A'));
 
 		for (squad in rules) {
 			squadSlug = getSlug(squad);
