@@ -45,10 +45,15 @@ function MemberTableBuilder(table, rules) {
 
 			navButton.on('click', (function(squadSlug) {
 				return function() {
-					var nooffline = table.hasClass('nooffline');
+					var $this = $(this),
+						nooffline = table.hasClass('nooffline');
+
+					if ($this.hasClass('selected')) {
+						return;
+					}
 
 					nav.find('li.primary').removeClass('selected');
-					$(this).addClass('selected');
+					$this.addClass('selected');
 
 					table.removeClass();
 					table.addClass(squadSlug + '-only');
