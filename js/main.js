@@ -15,6 +15,8 @@ $(function() {
 	});
 
 	memberLoader.on('member', function(character) {
+		membersLoaded++;
+		statusText.text('Loading members: ' + membersLoaded + ' of ' + memberLoader.memberCount);
 		if (character.returned < 1) {
 			return;
 		}
@@ -22,8 +24,6 @@ $(function() {
 			character.character_list[0],
 			new CharacterItems(character.character_list[0].item_list)
 		);
-		membersLoaded++;
-		statusText.text('Loading members: ' + membersLoaded + ' of ' + memberLoader.memberCount);
 	});
 
 	memberLoader.on('done', function() {
