@@ -7,7 +7,8 @@ $(function() {
 		statusBox = $('#status'),
 		statusText = statusBox.find('span'),
 		memberLoader = new MemberLoader(OUTFIT_ID),
-		tableBuilder = new MemberTableBuilder(membersTable, qualifications),
+		equipmentRequirements = new EquipmentRequirements(qualifications, items),
+		tableBuilder = new MemberTableBuilder(membersTable, equipmentRequirements),
 		membersLoaded = 0;
 
 	memberLoader.on('start', function() {
