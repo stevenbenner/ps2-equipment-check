@@ -2,7 +2,7 @@ var qualifications = {
 
 	'alpha squad': {
 
-		lightAssault: [
+		'Light Assault': [
 			{
 				item: items.class.lightAssault.flakArmor,
 				level: 3,
@@ -21,7 +21,7 @@ var qualifications = {
 			}
 		],
 
-		infiltrator: [
+		'Infiltrator': [
 			{
 				item: items.class.infiltrator.flakArmor,
 				level: 3,
@@ -58,7 +58,7 @@ var qualifications = {
 			}
 		],
 
-		engineer: [
+		'Engineer': [
 			{
 				item: items.class.engineer.flakArmor,
 				level: 3,
@@ -97,7 +97,7 @@ var qualifications = {
 			}
 		],
 
-		medic: [
+		'Medic': [
 			{
 				item: items.class.medic.medicalApplicator,
 				level: 4,
@@ -111,7 +111,7 @@ var qualifications = {
 			}
 		],
 
-		sunderer: [
+		'Sunderer': [
 			{
 				item: [
 					items.vehicle.sunderer.frontBulldog,
@@ -145,7 +145,7 @@ var qualifications = {
 
 	'bravo squad': {
 
-		heavyAssault: [
+		'Heavy Assault': [
 			{
 				item: items.class.heavyAssault.flakArmor,
 				level: 3,
@@ -167,7 +167,7 @@ var qualifications = {
 			}
 		],
 
-		engineer: [
+		'Engineer': [
 			{
 				item: items.class.engineer.flakArmor,
 				level: 3,
@@ -211,7 +211,7 @@ var qualifications = {
 			}
 		],
 
-		medic: [
+		'Medic': [
 			{
 				item: items.class.medic.medicalApplicator,
 				level: 4,
@@ -225,7 +225,7 @@ var qualifications = {
 			}
 		],
 
-		prowler: [
+		'Prowler': [
 			{
 				item: items.vehicle.prowler.p2120he,
 				required: true,
@@ -255,7 +255,7 @@ var qualifications = {
 			}
 		],
 
-		sunderer: [
+		'Sunderer': [
 			{
 				item: [
 					items.vehicle.sunderer.frontWalker,
@@ -293,7 +293,7 @@ var qualifications = {
 			}
 		],
 
-		lightning: [
+		'Lightning': [
 			{
 				item: items.vehicle.lightning.skyguard,
 				required: true,
