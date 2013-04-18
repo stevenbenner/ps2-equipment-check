@@ -9,8 +9,7 @@ function EquipmentRequirements(qualifications, itemDefinitions) {
 		$.each(playTypes, function(type, rules) {
 			me.rules[squad][type] = function(equipment) {
 				var hasRequiredItems = true,
-					displayGroups = {},
-					cell = $('<td>');
+					displayGroups = {};
 
 				$.each(rules, function(idx, item) {
 					var hasItem = false;
@@ -58,18 +57,11 @@ function EquipmentRequirements(qualifications, itemDefinitions) {
 					}
 				});
 
-				cell.text(hasRequiredItems ? type + ' Equipped' : 'Not Equipped');
-				cell.addClass(hasRequiredItems ? 'ok' : 'notok');
-
-				if (hasRequiredItems) {
-					$.each(displayGroups, function(group, items) {
-						var span = $('<span>');
-						span.text('[ ' + items.join(' | ') + ' ]');
-						cell.append(span);
-					});
-				}
-
-				return cell;
+				return {
+					name: type,
+					equipped: hasRequiredItems,
+					equipment: displayGroups
+				};
 			};
 		});
 	});

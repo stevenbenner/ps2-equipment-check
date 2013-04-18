@@ -4,6 +4,23 @@ function MemberTableBuilder(table, rules) {
 		return str.replace(/\s/, '-');
 	}
 
+	function getCell(equipObj) {
+		var cell = $('<td>');
+
+		cell.text(equipObj.equipped ? equipObj.name + ' Equipped' : 'Not Equipped');
+		cell.addClass(equipObj.equipped ? 'ok' : 'notok');
+
+		if (equipObj.equipped) {
+			$.each(equipObj.equipment, function(group, items) {
+				var span = $('<span>');
+				span.text('[ ' + items.join(' | ') + ' ]');
+				cell.append(span);
+			});
+		}
+
+		return cell;
+	}
+
 	this.buildHeader = function() {
 		var headerRow = $('<tr>'),
 			squad,
@@ -99,7 +116,7 @@ function MemberTableBuilder(table, rules) {
 		for (squad in rules) {
 			squadSlug = getSlug(squad);
 			for (rule in rules[squad]) {
-				cell = rules[squad][rule](equipment);
+				cell = getCell(rules[squad][rule](equipment));
 				cell.addClass(squadSlug);
 				row.append(cell);
 			}
