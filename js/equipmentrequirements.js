@@ -11,48 +11,34 @@ function EquipmentRequirements(qualifications, itemDefinitions) {
 				var hasRequiredItems = true,
 					displayGroups = {};
 
-				$.each(rules, function(idx, item) {
-					var hasItem = false;
+				$.each(rules, function(idx, itemRule) {
+					var hasItem = false,
+						itemList;
 
-					// check for item
-					if (item.level) {
-						hasItem = equipment.has(item.item[item.level - 1]);
-						if (hasItem) {
-							displayGroups[item.group] = displayGroups[item.group] || [];
-							displayGroups[item.group].push(equipment.get(item.item).name.en);
-						}
-					} else if ($.isArray(item.item)) {
-						var hasAnyItem = false;
-						$.each(item.item, function(idx, subItem) {
+					// normalize item property into array of objects
+					if (!itemRule.level && $.isArray(itemRule.item)) {
+						itemList = itemRule.item;
+						$.each(itemList, function(idx, subItem) {
 							if (typeof subItem !== 'object') {
-								subItem = {
-									item: subItem
-								};
-							}
-							if (subItem.level) {
-								if (equipment.has(subItem.item[subItem.level - 1])) {
-									hasAnyItem = true;
-									displayGroups[item.group] = displayGroups[item.group] || [];
-									displayGroups[item.group].push(equipment.get(subItem.item).name.en);
-								}
-							} else {
-								if (equipment.has(subItem.item)) {
-									hasAnyItem = true;
-									displayGroups[item.group] = displayGroups[item.group] || [];
-									displayGroups[item.group].push(equipment.get(subItem.item).name.en);
-								}
+								itemList[idx] = { item: subItem };
 							}
 						});
-						hasItem = hasAnyItem;
 					} else {
-						hasItem = equipment.has(item.item);
-						if (hasItem) {
-							displayGroups[item.group] = displayGroups[item.group] || [];
-							displayGroups[item.group].push(equipment.get(item.item).name.en);
-						}
+						itemList = [ itemRule ];
 					}
 
-					if (!hasItem && item.required) {
+					// check each item in the collection - any match results in a positive hasItem
+					$.each(itemList, function(idx, subItem) {
+						var itemId = subItem.level ? subItem.item[subItem.level - 1] : subItem.item;
+						hasItem = equipment.has(itemId);
+						if (hasItem) {
+							displayGroups[itemRule.group] = displayGroups[itemRule.group] || [];
+							displayGroups[itemRule.group].push(equipment.get(subItem.item).name.en);
+						}
+					});
+
+					// if this rule is required and there was no matching item then fail
+					if (!hasItem && itemRule.required) {
 						hasRequiredItems = false;
 					}
 				});
