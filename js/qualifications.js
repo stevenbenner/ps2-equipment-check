@@ -4,7 +4,7 @@ var qualifications = {
 
 		'Light Assault': [
 			{
-				item: items.class.lightAssault.flakArmor,
+				item: items.lightAssault.flakArmor,
 				level: 3,
 				required: true,
 				group: 'equipment'
@@ -23,7 +23,7 @@ var qualifications = {
 
 		'Infiltrator': [
 			{
-				item: items.class.infiltrator.flakArmor,
+				item: items.infiltrator.flakArmor,
 				level: 3,
 				required: true,
 				group: 'equipment'
@@ -60,7 +60,7 @@ var qualifications = {
 
 		'Engineer': [
 			{
-				item: items.class.engineer.flakArmor,
+				item: items.engineer.flakArmor,
 				level: 3,
 				required: true,
 				group: 'equipment'
@@ -99,7 +99,7 @@ var qualifications = {
 
 		'Medic': [
 			{
-				item: items.class.medic.medicalApplicator,
+				item: items.medic.medicalApplicator,
 				level: 4,
 				required: true,
 				group: 'weapon'
@@ -114,27 +114,27 @@ var qualifications = {
 		'Sunderer': [
 			{
 				item: [
-					items.vehicle.sunderer.frontBulldog,
-					items.vehicle.sunderer.frontFury
+					items.sunderer.frontBulldog,
+					items.sunderer.frontFury
 				],
 				required: true,
 				group: 'front-weapon'
 			},
 			{
 				item: [
-					items.vehicle.sunderer.rearBulldog,
-					items.vehicle.sunderer.rearFury
+					items.sunderer.rearBulldog,
+					items.sunderer.rearFury
 				],
 				required: true,
 				group: 'rear-weapon'
 			},
 			{
-				item: items.vehicle.sunderer.ams,
+				item: items.sunderer.ams,
 				required: true,
 				group: 'utility-slot'
 			},
 			{
-				item: items.vehicle.sunderer.mineGuard,
+				item: items.sunderer.mineGuard,
 				level: 3,
 				required: true,
 				group: 'defense-slot'
@@ -147,7 +147,7 @@ var qualifications = {
 
 		'Heavy Assault': [
 			{
-				item: items.class.heavyAssault.flakArmor,
+				item: items.heavyAssault.flakArmor,
 				level: 3,
 				required: true,
 				group: 'equipment'
@@ -169,7 +169,7 @@ var qualifications = {
 
 		'Engineer': [
 			{
-				item: items.class.engineer.flakArmor,
+				item: items.engineer.flakArmor,
 				level: 3,
 				required: true,
 				group: 'equipment'
@@ -200,7 +200,7 @@ var qualifications = {
 				group: 'weapon-launcher'
 			},
 			{
-				item: items.class.engineer.avManaTurret,
+				item: items.engineer.avManaTurret,
 				required: true,
 				group: 'turret'
 			},
@@ -213,7 +213,7 @@ var qualifications = {
 
 		'Medic': [
 			{
-				item: items.class.medic.medicalApplicator,
+				item: items.medic.medicalApplicator,
 				level: 4,
 				required: true,
 				group: 'weapon'
@@ -227,28 +227,28 @@ var qualifications = {
 
 		'Prowler': [
 			{
-				item: items.vehicle.prowler.p2120he,
+				item: items.prowler.p2120he,
 				required: true,
 				group: 'primary'
 			},
 			{
 				item: [
-					items.vehicle.prowler.walker,
-					items.vehicle.prowler.ranger,
-					items.vehicle.prowler.halberd,
-					items.vehicle.prowler.vulcan
+					items.prowler.walker,
+					items.prowler.ranger,
+					items.prowler.halberd,
+					items.prowler.vulcan
 				],
 				required: true,
 				group: 'secondary'
 			},
 			{
-				item: items.vehicle.prowler.anchoredMode,
+				item: items.prowler.anchoredMode,
 				level: 2,
 				required: true,
 				group: 'utility-slot'
 			},
 			{
-				item: items.vehicle.prowler.mineGuard,
+				item: items.prowler.mineGuard,
 				level: 3,
 				required: true,
 				group: 'defense-slot'
@@ -258,33 +258,33 @@ var qualifications = {
 		'Sunderer': [
 			{
 				item: [
-					items.vehicle.sunderer.frontWalker,
-					items.vehicle.sunderer.frontRanger
+					items.sunderer.frontWalker,
+					items.sunderer.frontRanger
 				],
 				required: true,
 				group: 'front-weapon'
 			},
 			{
 				item: [
-					items.vehicle.sunderer.rearWalker,
-					items.vehicle.sunderer.rearRanger
+					items.sunderer.rearWalker,
+					items.sunderer.rearRanger
 				],
 				required: true,
 				group: 'rear-weapon'
 			},
 			{
-				item: items.vehicle.sunderer.ams,
+				item: items.sunderer.ams,
 				required: true,
 				group: 'utility-slot'
 			},
 			{
 				item: [
 					{
-						item: items.vehicle.sunderer.ammoDispenser,
+						item: items.sunderer.ammoDispenser,
 						level: 1
 					},
 					{
-						item: items.vehicle.sunderer.proximityRepair,
+						item: items.sunderer.proximityRepair,
 						level: 5
 					}
 				],
@@ -295,18 +295,18 @@ var qualifications = {
 
 		'Lightning': [
 			{
-				item: items.vehicle.lightning.skyguard,
+				item: items.lightning.skyguard,
 				required: true,
 				group: 'primary'
 			},
 			{
-				item: items.vehicle.lightning.fireSuppression,
+				item: items.lightning.fireSuppression,
 				level: 3,
 				required: true,
 				group: 'utility-slot'
 			},
 			{
-				item: items.vehicle.lightning.mineGuard,
+				item: items.lightning.mineGuard,
 				level: 3,
 				required: true,
 				group: 'defense-slot'
