@@ -1,3 +1,5 @@
+var PLAYERS_URL = 'https://players.planetside2.com/#!/';
+
 function MemberTableBuilder(table, rules) {
 
 	function getSlug(str) {
@@ -101,7 +103,7 @@ function MemberTableBuilder(table, rules) {
 			nameColumn = $('<td>');
 
 		nameColumn.append($('<span>').addClass('status'));
-		nameColumn.append($('<a>').text(character.name.first).attr('href', 'https://players.planetside2.com/#!/' + character.character_id).attr('target', '_blank'));
+		nameColumn.append($('<a>').text(character.name.first).attr('href', PLAYERS_URL + character.character_id).attr('target', '_blank'));
 		row.addClass(character.online_status === '1' ? 'online' : 'offline');
 		row.append(nameColumn);
 		row.append($('<td>').text(character.experience.length ? character.experience[0].rank : 'N/A'));
