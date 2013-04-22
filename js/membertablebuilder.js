@@ -100,10 +100,16 @@ function MemberTableBuilder(table, rules) {
 
 	this.addMember = function(character, equipment) {
 		var row = $('<tr>'),
-			nameColumn = $('<td>');
+			nameColumn = $('<td>'),
+			anchor = $('<a>');
+
+		anchor.text(character.name.first);
+		anchor.attr('href', PLAYERS_URL + character.character_id);
+		anchor.attr('target', '_blank');
 
 		nameColumn.append($('<span>').addClass('status'));
-		nameColumn.append($('<a>').text(character.name.first).attr('href', PLAYERS_URL + character.character_id).attr('target', '_blank'));
+		nameColumn.append(anchor);
+
 		row.addClass(character.online_status === '1' ? 'online' : 'offline');
 		row.append(nameColumn);
 		row.append($('<td>').text(character.experience.length ? character.experience[0].rank : 'N/A'));
