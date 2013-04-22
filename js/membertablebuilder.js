@@ -21,20 +21,26 @@ function MemberTableBuilder(table, rules) {
 		return cell;
 	}
 
+	function forEachRule(callback) {
+		$.each(rules, function(squad, types) {
+			var squadSlug = getSlug(squad);
+			$.each(types, function(type, fn) {
+				callback.call(this, squadSlug, type, fn);
+			});
+		});
+	}
+
 	this.buildHeader = function() {
 		var headerRow = $('<tr>');
 
 		headerRow.append($('<th>').text('Name'));
 		headerRow.append($('<th>').text('BR'));
 
-		$.each(rules, function(squad, types) {
-			var squadSlug = getSlug(squad);
-			$.each(types, function(rule, fn) {
-				var cell = $('<th>');
-				cell.addClass(squadSlug);
-				cell.text(rule);
-				headerRow.append(cell);
-			});
+		forEachRule(function(squadSlug, type) {
+			var cell = $('<th>');
+			cell.addClass(squadSlug);
+			cell.text(type);
+			headerRow.append(cell);
 		});
 
 		table.append(headerRow);
@@ -100,13 +106,10 @@ function MemberTableBuilder(table, rules) {
 		row.append(nameColumn);
 		row.append($('<td>').text(character.experience.length ? character.experience[0].rank : 'N/A'));
 
-		$.each(rules, function(squad, types) {
-			var squadSlug = getSlug(squad);
-			$.each(types, function(rule, fn) {
-				var cell = getCell(fn(equipment));
-				cell.addClass(squadSlug);
-				row.append(cell);
-			});
+		forEachRule(function(squadSlug, type, fn) {
+			var cell = getCell(fn(equipment));
+			cell.addClass(squadSlug);
+			row.append(cell);
 		});
 
 		table.append(row);
