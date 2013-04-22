@@ -22,24 +22,20 @@ function MemberTableBuilder(table, rules) {
 	}
 
 	this.buildHeader = function() {
-		var headerRow = $('<tr>'),
-			squad,
-			squadSlug,
-			rule,
-			cell;
+		var headerRow = $('<tr>');
 
 		headerRow.append($('<th>').text('Name'));
 		headerRow.append($('<th>').text('BR'));
 
-		for (squad in rules) {
-			squadSlug = getSlug(squad);
-			for (rule in rules[squad]) {
-				cell = $('<th>');
+		$.each(rules, function(squad, types) {
+			var squadSlug = getSlug(squad);
+			$.each(types, function(rule, fn) {
+				var cell = $('<th>');
 				cell.addClass(squadSlug);
 				cell.text(rule);
 				headerRow.append(cell);
-			}
-		}
+			});
+		});
 
 		table.append(headerRow);
 
@@ -48,40 +44,35 @@ function MemberTableBuilder(table, rules) {
 	};
 
 	this.buildNav = function(nav) {
-		var hideOfflineCheck = nav.find('#hide-offline'),
-			squad,
-			squadSlug,
-			navButton;
+		var hideOfflineCheck = nav.find('#hide-offline');
 
-		for (squad in rules) {
-			squadSlug = getSlug(squad);
-			navButton = $('<li>');
+		$.each(rules, function(squad, types) {
+			var squadSlug = getSlug(squad),
+				navButton = $('<li>');
 
 			navButton.addClass('primary');
 			navButton.text(squad);
 
-			navButton.on('click', (function(squadSlug) {
-				return function() {
-					var $this = $(this),
-						nooffline = table.hasClass('nooffline');
+			navButton.on('click', function() {
+				var $this = $(this),
+					nooffline = table.hasClass('nooffline');
 
-					if ($this.hasClass('selected')) {
-						return;
-					}
+				if ($this.hasClass('selected')) {
+					return;
+				}
 
-					nav.find('li.primary').removeClass('selected');
-					$this.addClass('selected');
+				nav.find('li.primary').removeClass('selected');
+				$this.addClass('selected');
 
-					table.removeClass();
-					table.addClass(squadSlug + '-only');
-					if (nooffline) {
-						table.addClass('nooffline');
-					}
-				};
-			}(squadSlug)));
+				table.removeClass();
+				table.addClass(squadSlug + '-only');
+				if (nooffline) {
+					table.addClass('nooffline');
+				}
+			});
 
 			nav.append(navButton);
-		}
+		});
 
 		function handleOfflineCheckbox() {
 			if (hideOfflineCheck.is(':checked')) {
@@ -101,11 +92,7 @@ function MemberTableBuilder(table, rules) {
 
 	this.addMember = function(character, equipment) {
 		var row = $('<tr>'),
-			nameColumn = $('<td>'),
-			squad,
-			squadSlug,
-			rule,
-			cell;
+			nameColumn = $('<td>');
 
 		nameColumn.append($('<span>').addClass('status'));
 		nameColumn.append($('<a>').text(character.name.first).attr('href', 'https://players.planetside2.com/#!/' + character.character_id).attr('target', '_blank'));
@@ -113,14 +100,14 @@ function MemberTableBuilder(table, rules) {
 		row.append(nameColumn);
 		row.append($('<td>').text(character.experience.length ? character.experience[0].rank : 'N/A'));
 
-		for (squad in rules) {
-			squadSlug = getSlug(squad);
-			for (rule in rules[squad]) {
-				cell = getCell(rules[squad][rule](equipment));
+		$.each(rules, function(squad, types) {
+			var squadSlug = getSlug(squad);
+			$.each(types, function(rule, fn) {
+				var cell = getCell(fn(equipment));
 				cell.addClass(squadSlug);
 				row.append(cell);
-			}
-		}
+			});
+		});
 
 		table.append(row);
 	}
