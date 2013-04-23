@@ -1,6 +1,4 @@
 // item definitions - tr specific
-// how to find item id example:
-//     http://census.soe.com/get/ps2-beta/item?name.en=^Medical%20Applicator&c:start=0&c:limit=25&c:show=name.en,classes_list,faction
 var items = {
 	engineer: {
 		avManaTurret: 71564,
