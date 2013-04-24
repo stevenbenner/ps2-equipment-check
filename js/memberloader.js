@@ -16,7 +16,6 @@ function MemberLoader(outfitId, concurrency) {
 	me.start = function() {
 		me.emit('start');
 		$.ajax({
-			type: 'GET',
 			url: OUTFIT_URL + outfitId,
 			data: {
 				'c:resolve': 'member'
@@ -47,7 +46,6 @@ function MemberLoader(outfitId, concurrency) {
 		activeConnections++;
 
 		$.ajax({
-			type: 'GET',
 			url: CHARACTER_URL + characterId,
 			data: {
 				'c:show': 'name,item_list,online_status,experience',
