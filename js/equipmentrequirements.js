@@ -29,9 +29,10 @@ function EquipmentRequirements(qualifications, itemDefinitions) {
 
 					// check each item in the collection - any match results in a positive hasItem
 					$.each(itemList, function(idx, subItem) {
-						var itemId = subItem.level ? subItem.item[subItem.level - 1] : subItem.item;
-						hasItem = equipment.has(itemId);
-						if (hasItem) {
+						var itemId = subItem.level ? subItem.item[subItem.level - 1] : subItem.item,
+							hasThisItem = equipment.has(itemId);
+						if (hasThisItem) {
+							hasItem = true;
 							displayGroups[itemRule.group] = displayGroups[itemRule.group] || [];
 							displayGroups[itemRule.group].push(equipment.get(subItem.item).name.en);
 						}
