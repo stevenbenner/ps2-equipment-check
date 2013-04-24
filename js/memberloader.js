@@ -20,7 +20,6 @@ function MemberLoader(outfitId, concurrency) {
 			data: {
 				'c:resolve': 'member'
 			},
-			contentType: "application/json",
 			dataType: 'jsonp'
 		}).done(function(data) {
 			$.each(data.outfit_list[0].members, function(idx, member) {
@@ -51,7 +50,6 @@ function MemberLoader(outfitId, concurrency) {
 				'c:show': 'name,item_list,online_status,experience',
 				'c:resolve': 'item_list(name.en,description.en),online_status'
 			},
-			contentType: "application/json",
 			dataType: 'jsonp'
 		}).done(function(charData) {
 			if (charData.error) {
