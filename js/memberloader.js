@@ -21,7 +21,6 @@ function MemberLoader(outfitId, concurrency) {
 			data: {
 				'c:resolve': 'member'
 			},
-			async: false,
 			contentType: "application/json",
 			dataType: 'jsonp'
 		}).done(function(data) {
@@ -54,7 +53,6 @@ function MemberLoader(outfitId, concurrency) {
 				'c:show': 'name,item_list,online_status,experience',
 				'c:resolve': 'item_list(name.en,description.en),online_status'
 			},
-			async: false,
 			contentType: "application/json",
 			dataType: 'jsonp'
 		}).done(function(charData) {
