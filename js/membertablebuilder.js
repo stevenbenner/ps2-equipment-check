@@ -18,6 +18,12 @@ function MemberTableBuilder(table, rules) {
 				span.text('[ ' + items.join(' | ') + ' ]');
 				cell.append(span);
 			});
+		} else {
+			$.each(equipObj.missing, function(idx, obj) {
+				var span = $('<span>');
+				span.text('[ ' + obj.group + ' ]');
+				cell.append(span);
+			});
 		}
 
 		return cell;
