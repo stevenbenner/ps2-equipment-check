@@ -53,13 +53,9 @@ function MemberLoader(outfitId, concurrency) {
 			dataType: 'jsonp'
 		}).done(function(charData) {
 			if (charData.error) {
-				//console.log(charData);
 				memberList.push(characterId);
 				me.fetchNextMember();
 				return;
-			}
-			if (!charData.character_list.length) {
-				//console.log(charData);
 			}
 			activeConnections--;
 			me.emit('member', [ charData ]);
