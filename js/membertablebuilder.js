@@ -54,7 +54,7 @@ function MemberTableBuilder(table, rules) {
 	this.buildNav = function(nav) {
 		var hideOfflineCheck = nav.find('#hide-offline');
 
-		$.each(rules, function(squad, types) {
+		$.each(rules, function(squad) {
 			var squadSlug = getSlug(squad),
 				navButton = $('<li>');
 
