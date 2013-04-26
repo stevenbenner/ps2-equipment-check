@@ -1,4 +1,4 @@
-function EquipmentRequirements(qualifications, itemDefinitions) {
+function EquipmentRequirements(qualifications) {
 	var me = this;
 
 	me.rules = {};
