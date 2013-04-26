@@ -63,6 +63,6 @@ function CharacterItems(itemList) {
 		}
 
 		return item;
-	}
+	};
 
 }

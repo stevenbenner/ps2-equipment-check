@@ -121,6 +121,6 @@ function MemberTableBuilder(table, rules) {
 		});
 
 		table.append(row);
-	}
+	};
 
 }
