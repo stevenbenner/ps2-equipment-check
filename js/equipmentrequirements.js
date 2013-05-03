@@ -9,7 +9,8 @@ function EquipmentRequirements(qualifications) {
 		$.each(playTypes, function(type, rules) {
 			me.rules[squad][type] = function(equipment) {
 				var hasRequiredItems = true,
-					displayGroups = {};
+					displayGroups = {},
+					missing = [];
 
 				$.each(rules, function(idx, itemRule) {
 					var hasItem = false,
@@ -41,13 +42,15 @@ function EquipmentRequirements(qualifications) {
 					// if this rule is required and there was no matching item then fail
 					if (!hasItem && itemRule.required) {
 						hasRequiredItems = false;
+						missing.push(itemRule);
 					}
 				});
 
 				return {
 					name: type,
 					equipped: hasRequiredItems,
-					equipment: displayGroups
+					equipment: displayGroups,
+					missing: missing
 				};
 			};
 		});

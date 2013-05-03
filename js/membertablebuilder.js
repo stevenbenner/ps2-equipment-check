@@ -18,6 +18,12 @@ function MemberTableBuilder(table, rules) {
 				span.text('[ ' + items.join(' | ') + ' ]');
 				cell.append(span);
 			});
+		} else {
+			$.each(equipObj.missing, function(idx, obj) {
+				var span = $('<span>');
+				span.text('[ ' + obj.group + ' ]');
+				cell.append(span);
+			});
 		}
 
 		return cell;
@@ -52,7 +58,8 @@ function MemberTableBuilder(table, rules) {
 	};
 
 	this.buildNav = function(nav) {
-		var hideOfflineCheck = nav.find('#hide-offline');
+		var hideOfflineCheck = nav.find('#hide-offline'),
+			hideMissingCheck = nav.find('#hide-missing');
 
 		$.each(rules, function(squad) {
 			var squadSlug = getSlug(squad),
@@ -63,7 +70,8 @@ function MemberTableBuilder(table, rules) {
 
 			navButton.on('click', function() {
 				var $this = $(this),
-					nooffline = table.hasClass('nooffline');
+					nooffline = table.hasClass('nooffline'),
+					nomissing = table.hasClass('nomissing');
 
 				if ($this.hasClass('selected')) {
 					return;
@@ -76,6 +84,9 @@ function MemberTableBuilder(table, rules) {
 				table.addClass(squadSlug + '-only');
 				if (nooffline) {
 					table.addClass('nooffline');
+				}
+				if (nomissing) {
+					table.addClass('nomissing');
 				}
 			});
 
@@ -94,6 +105,19 @@ function MemberTableBuilder(table, rules) {
 		hideOfflineCheck.on('click', handleOfflineCheckbox);
 		table.removeClass('nooffline');
 		handleOfflineCheckbox();
+
+		function handleMissingCheckbox() {
+			if (hideMissingCheck.is(':checked')) {
+				table.addClass('nomissing');
+				hideMissingCheck.parent().addClass('selected');
+			} else {
+				table.removeClass('nomissing');
+				hideMissingCheck.parent().removeClass('selected');
+			}
+		}
+		hideMissingCheck.on('click', handleMissingCheckbox);
+		table.removeClass('nomissing');
+		handleMissingCheckbox();
 
 		nav.find('li.primary').first().addClass('selected');
 	};
