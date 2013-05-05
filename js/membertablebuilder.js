@@ -38,6 +38,16 @@ function MemberTableBuilder(table, rules) {
 		});
 	}
 
+	function toggleClass(element, className) {
+		if (element.is(':checked')) {
+			table.addClass(className);
+			element.parent().addClass('selected');
+		} else {
+			table.removeClass(className);
+			element.parent().removeClass('selected');
+		}
+	}
+
 	this.buildHeader = function() {
 		var headerRow = $('<tr>');
 
@@ -94,26 +104,14 @@ function MemberTableBuilder(table, rules) {
 		});
 
 		function handleOfflineCheckbox() {
-			if (hideOfflineCheck.is(':checked')) {
-				table.addClass('nooffline');
-				hideOfflineCheck.parent().addClass('selected');
-			} else {
-				table.removeClass('nooffline');
-				hideOfflineCheck.parent().removeClass('selected');
-			}
+			toggleClass(hideOfflineCheck, 'nooffline');
 		}
 		hideOfflineCheck.on('click', handleOfflineCheckbox);
 		table.removeClass('nooffline');
 		handleOfflineCheckbox();
 
 		function handleMissingCheckbox() {
-			if (hideMissingCheck.is(':checked')) {
-				table.addClass('nomissing');
-				hideMissingCheck.parent().addClass('selected');
-			} else {
-				table.removeClass('nomissing');
-				hideMissingCheck.parent().removeClass('selected');
-			}
+			toggleClass(hideMissingCheck, 'nomissing');
 		}
 		hideMissingCheck.on('click', handleMissingCheckbox);
 		table.removeClass('nomissing');
