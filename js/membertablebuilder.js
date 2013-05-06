@@ -39,12 +39,13 @@ function MemberTableBuilder(table, rules) {
 	}
 
 	function toggleClass(element, className) {
+		var navButton = element.parent();
 		if (element.is(':checked')) {
 			table.addClass(className);
-			element.parent().addClass('selected');
+			navButton.addClass('selected');
 		} else {
 			table.removeClass(className);
-			element.parent().removeClass('selected');
+			navButton.removeClass('selected');
 		}
 	}
 
