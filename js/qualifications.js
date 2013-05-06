@@ -36,7 +36,7 @@ var qualifications = {
 					items.weapon.rams
 				],
 				required: true,
-				group: 'sniper'
+				group: 'sniper-rifle'
 			},
 			{
 				item: [
