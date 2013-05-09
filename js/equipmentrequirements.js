@@ -1,3 +1,5 @@
+/* exported EquipmentRequirements */
+
 function EquipmentRequirements(qualifications) {
 	var me = this;
 

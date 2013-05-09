@@ -1,3 +1,5 @@
+/* exported EventEmitter */
+
 function EventEmitter() {
 	var events = {};
 

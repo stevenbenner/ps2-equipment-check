@@ -1,3 +1,5 @@
+/* exported MemberTableBuilder */
+
 var PLAYERS_URL = 'https://players.planetside2.com/#!/';
 
 function MemberTableBuilder(table, rules) {

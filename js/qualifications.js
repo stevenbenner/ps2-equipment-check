@@ -1,3 +1,5 @@
+/* exported qualifications */
+
 var qualifications = {
 
 	'alpha squad': {

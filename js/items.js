@@ -1,3 +1,5 @@
+/* exported items */
+
 // item definitions - tr specific
 var items = {
 	engineer: {

@@ -1,3 +1,5 @@
+/* exported MemberLoader */
+
 // constants
 var OUTFIT_URL = 'http://census.soe.com/get/ps2-beta/outfit/',
 	CHARACTER_URL = 'http://census.soe.com/get/ps2-beta/character/';

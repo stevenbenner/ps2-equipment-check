@@ -1,3 +1,5 @@
+/* exported CharacterItems */
+
 function CharacterItems(itemList) {
 
 	var searchCache = {};
