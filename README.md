@@ -2,6 +2,8 @@
 
 This is a tool to check all of the members of my [PlanetSide 2](https://www.planetside2.com/) outfit and determine if they have the equipment required for participating in specialized squad/platoon game play. It uses the [census.soe.com](https://census.soe.com/) API to pull outfit and character information.
 
+[![Dependency Status](https://gemnasium.com/stevenbenner/ps2-equipment-check.png)](https://gemnasium.com/stevenbenner/ps2-equipment-check)
+
 ## Usage
 
 This is an entirely client-side web application. To run the tool simply open the index.html file in a web browser.
