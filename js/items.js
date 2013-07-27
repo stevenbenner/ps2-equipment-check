@@ -101,8 +101,8 @@ var items = {
 	},
 	sunderer: {
 		ams: 2996,
-		frontBulldog: 2832,
-		rearBulldog: 2835,
+		frontBulldog: 2834,
+		rearBulldog: 2837,
 		frontFury: 2874,
 		rearFury: 2877,
 		frontWalker: 3082,
