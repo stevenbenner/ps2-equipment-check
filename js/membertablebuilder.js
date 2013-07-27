@@ -137,7 +137,7 @@ function MemberTableBuilder(table, rules) {
 
 		row.addClass(character.online_status === '1' ? 'online' : 'offline');
 		row.append(nameColumn);
-		row.append($('<td>').text(character.experience.length ? character.experience[0].rank : 'N/A'));
+		row.append($('<td>').text(character.battle_rank ? character.battle_rank.value : 'N/A'));
 
 		forEachRule(function(squadSlug, type, fn) {
 			var cell = getCell(fn(equipment));

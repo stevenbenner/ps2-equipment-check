@@ -23,7 +23,7 @@ $(function() {
 		}
 		tableBuilder.addMember(
 			character.character_list[0],
-			new CharacterItems(character.character_list[0].item_list)
+			new CharacterItems(character.character_list[0].items)
 		);
 	});
 

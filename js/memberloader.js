@@ -1,8 +1,8 @@
 /* exported MemberLoader */
 
 // constants
-var OUTFIT_URL = 'http://census.soe.com/get/ps2-beta/outfit/',
-	CHARACTER_URL = 'http://census.soe.com/get/ps2-beta/character/';
+var OUTFIT_URL = 'http://census.soe.com/get/ps2:v1/outfit/',
+	CHARACTER_URL = 'http://census.soe.com/get/ps2:v1/character/';
 
 function MemberLoader(outfitId, concurrency) {
 	var memberList = [],
@@ -49,8 +49,8 @@ function MemberLoader(outfitId, concurrency) {
 		$.ajax({
 			url: CHARACTER_URL + characterId,
 			data: {
-				'c:show': 'name,item_list,online_status,experience',
-				'c:resolve': 'item_list(name.en,description.en),online_status'
+				//'c:show': 'name,item_full,online_status,experience',
+				'c:resolve': 'item_full(name.en,description.en),online_status'
 			},
 			dataType: 'jsonp'
 		}).done(function(charData) {

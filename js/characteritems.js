@@ -15,10 +15,10 @@ function CharacterItems(itemList) {
 				isMatch = item.name === search;
 				break;
 			case 'number':
-				isMatch = item.id === search.toString();
+				isMatch = item.item_id === search.toString();
 				break;
 			case 'object':
-				isMatch = item.id === search.id.toString();
+				isMatch = item.item_id === search.id.toString();
 				break;
 			}
 			searchCache[search] = isMatch;
@@ -36,7 +36,7 @@ function CharacterItems(itemList) {
 		function getItem(itemId) {
 			var retItem;
 			$.each(itemList, function(idx, item) {
-				if (item.id === itemId.toString()) {
+				if (item.item_id === itemId.toString()) {
 					retItem = item;
 					return false;
 				}
