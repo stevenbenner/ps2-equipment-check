@@ -130,11 +130,11 @@ var qualifications = {
 				required: true,
 				group: 'rear-weapon'
 			},
-			{
-				item: items.sunderer.ams,
-				required: true,
-				group: 'utility-slot'
-			},
+			//{
+			//	item: items.sunderer.ams,
+			//	required: true,
+			//	group: 'utility-slot'
+			//},
 			{
 				item: items.sunderer.mineGuard,
 				level: 3,
