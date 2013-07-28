@@ -154,6 +154,7 @@ var items = {
 		smg46: 28000,
 		pdw16: 28001,
 		t2: 34002,
+		decimator: 50560,
 		skep: 34003
 	}
 };
