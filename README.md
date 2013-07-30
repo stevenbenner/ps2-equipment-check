@@ -20,7 +20,7 @@ In most cases looking up an item using the API is fairly simple. The simplest wa
 
 **Example API query:**
 
-`http://census.soe.com/get/ps2-beta/item?name.en=^Medical&c:start=0&c:limit=25&c:show=name.en,classes_list,faction`
+`http://census.soe.com/get/ps2:v1/item?name.en=^Medical&c:start=0&c:limit=25&c:show=name.en,classes_list,faction`
 
 This will return a list of items whose (English) name begins with `Medical` as well as the classes/factions that can use that item.
 
