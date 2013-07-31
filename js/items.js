@@ -138,6 +138,10 @@ var items = {
 			2969
 		]
 	},
+	mosquito: {
+		hellfireRocketPods: 4903,
+		m18rotary: 4911
+	},
 	weapon: {
 		trac5s: {
 			id: 7192,
