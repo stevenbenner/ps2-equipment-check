@@ -1,8 +1,9 @@
 /* exported MemberLoader */
 
 // constants
-var OUTFIT_URL = 'http://census.soe.com/get/ps2:v1/outfit/',
-	CHARACTER_URL = 'http://census.soe.com/get/ps2:v1/character/';
+var OUTFIT_URL = 'http://census.soe.com/get/ps2:v2/outfit_member',
+	CHARACTER_URL = 'http://census.soe.com/get/ps2:v2/character',
+	SKILLS_URL = 'http://census.soe.com/get/ps2:v2/characters_skill';
 
 function MemberLoader(outfitId, concurrency) {
 	var memberList = [],
@@ -18,13 +19,17 @@ function MemberLoader(outfitId, concurrency) {
 	me.start = function() {
 		me.emit('start');
 		$.ajax({
-			url: OUTFIT_URL + outfitId,
+			url: OUTFIT_URL,
 			data: {
-				'c:resolve': 'member'
+				'outfit_id': outfitId,
+				'c:resolve': 'character(character_id)',
+				'c:show': 'character_id',
+				'c:sort': 'rank_ordinal',
+				'c:limit': 1000
 			},
 			dataType: 'jsonp'
 		}).done(function(data) {
-			$.each(data.outfit_list[0].members, function(idx, member) {
+			$.each(data.outfit_member_list, function(idx, member) {
 				memberList.push(member.character_id);
 				me.memberCount++;
 			});
@@ -47,10 +52,12 @@ function MemberLoader(outfitId, concurrency) {
 		activeConnections++;
 
 		$.ajax({
-			url: CHARACTER_URL + characterId,
+			url: CHARACTER_URL,
 			data: {
-				//'c:show': 'name,item_full,online_status,experience',
-				'c:resolve': 'item_full(name.en,description.en),online_status'
+				'character_id': characterId,
+				'c:resolve': 'item_full(name,item_id),online_status',
+				'c:show': 'name,battle_rank,character_id,online_status',
+				'c:lang': 'en',
 			},
 			dataType: 'jsonp'
 		}).done(function(charData) {
@@ -59,9 +66,25 @@ function MemberLoader(outfitId, concurrency) {
 				me.fetchNextMember();
 				return;
 			}
-			activeConnections--;
-			me.emit('member', [ charData ]);
-			me.fetchNextMember();
+			$.ajax({
+				url: SKILLS_URL,
+				data: {
+					'character_id': characterId,
+					'c:join': 'skill^show:name\'skill_id\'skill_line_id',
+					'c:lang': 'en',
+					'c:limit': 1000
+				},
+				dataType: 'jsonp'
+			}).done(function(skillData) {
+				if (skillData.error) {
+					memberList.push(characterId);
+					me.fetchNextMember();
+					return;
+				}
+				activeConnections--;
+				me.emit('member', [ new Character(charData, skillData) ]);
+				me.fetchNextMember();
+			});
 		});
 	};
 }

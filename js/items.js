@@ -143,8 +143,8 @@ var items = {
 		m18rotary: 4911
 	},
 	weapon: {
-		trac5s: {
-			id: 7192,
+		trac5s: 7192,
+		trac5sAttachments: {
 			grenadeLauncher: 9322,
 			smokeLauncher: 9329,
 			hsnv: 9323,

@@ -7,8 +7,7 @@ $(function() {
 		statusBox = $('#status'),
 		statusText = statusBox.find('span'),
 		memberLoader = new MemberLoader(OUTFIT_ID),
-		equipmentRequirements = new EquipmentRequirements(qualifications),
-		tableBuilder = new MemberTableBuilder(membersTable, equipmentRequirements),
+		tableBuilder = new MemberTableBuilder(membersTable, qualifications),
 		membersLoaded = 0;
 
 	memberLoader.on('start', function() {
@@ -18,13 +17,7 @@ $(function() {
 	memberLoader.on('member', function(character) {
 		membersLoaded++;
 		statusText.text('Loading members: ' + membersLoaded + ' of ' + memberLoader.memberCount);
-		if (character.returned < 1) {
-			return;
-		}
-		tableBuilder.addMember(
-			character.character_list[0],
-			new CharacterItems(character.character_list[0].items)
-		);
+		tableBuilder.addMember(character);
 	});
 
 	memberLoader.on('done', function() {

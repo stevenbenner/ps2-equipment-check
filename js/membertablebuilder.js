@@ -8,34 +8,11 @@ function MemberTableBuilder(table, rules) {
 		return str.replace(/\s/, '-');
 	}
 
-	function getCell(equipObj) {
-		var cell = $('<td>');
-
-		cell.text(equipObj.equipped ? equipObj.name + ' Equipped' : 'Not Equipped');
-		cell.addClass(equipObj.equipped ? 'ok' : 'notok');
-
-		if (equipObj.equipped) {
-			$.each(equipObj.equipment, function(group, items) {
-				var span = $('<span>');
-				span.text('[ ' + items.join(' | ') + ' ]');
-				cell.append(span);
-			});
-		} else {
-			$.each(equipObj.missing, function(idx, obj) {
-				var span = $('<span>');
-				span.text('[ ' + obj.group + ' ]');
-				cell.append(span);
-			});
-		}
-
-		return cell;
-	}
-
 	function forEachRule(callback) {
 		$.each(rules, function(squad, types) {
 			var squadSlug = getSlug(squad);
-			$.each(types, function(type, fn) {
-				callback.call(this, squadSlug, type, fn);
+			$.each(types, function(type, requirements) {
+				callback.call(this, squadSlug, type, requirements);
 			});
 		});
 	}
@@ -123,24 +100,52 @@ function MemberTableBuilder(table, rules) {
 		nav.find('li.primary').first().addClass('selected');
 	};
 
-	this.addMember = function(character, equipment) {
+	this.addMember = function(character) {
 		var row = $('<tr>'),
 			nameColumn = $('<td>'),
 			anchor = $('<a>');
 
-		anchor.text(character.name.first);
-		anchor.attr('href', PLAYERS_URL + character.character_id);
+		anchor.text(character.name);
+		anchor.attr('href', PLAYERS_URL + character.id);
 		anchor.attr('target', '_blank');
 
 		nameColumn.append($('<span>').addClass('status'));
 		nameColumn.append(anchor);
 
-		row.addClass(character.online_status === '1' ? 'online' : 'offline');
+		row.addClass(character.online ? 'online' : 'offline');
 		row.append(nameColumn);
-		row.append($('<td>').text(character.battle_rank ? character.battle_rank.value : 'N/A'));
+		row.append($('<td>').text(character.rank));
 
-		forEachRule(function(squadSlug, type, fn) {
-			var cell = getCell(fn(equipment));
+		forEachRule(function(squadSlug, type, requirements) {
+			var cell = $('<td>');
+
+			// check certification requirements
+			$.each(requirements.certifications, function(idx, val) {
+				var cert = character.getCertLine(val),
+					span = $('<span>'),
+					level;
+
+				if (cert) {
+					level = $.inArray(+cert.skill_id, val.skill.skills) + 1;
+					if (level < val.level) {
+						span.addClass('notok');
+					} else {
+						span.addClass('ok');
+					}
+					span.text(cert.name.en);
+				} else {
+					span.addClass('notok');
+					span.text(val.skill.name + ' 0');
+				}
+
+				cell.append(span);
+			});
+
+			// check equipment requirements
+			$.each(requirements.equipment, function(idx, val) {
+				cell.append('<span>' + character.getEquipment(val) + '</span>');
+			});
+
 			cell.addClass(squadSlug);
 			row.append(cell);
 		});

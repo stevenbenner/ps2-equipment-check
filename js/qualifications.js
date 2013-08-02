@@ -4,316 +4,137 @@ var qualifications = {
 
 	'alpha squad': {
 
-		'Light Assault': [
-			{
-				item: items.lightAssault.flakArmor,
-				level: 3,
-				required: true,
-				group: 'equipment'
-			},
-			{
-				item: items.consumable.c4,
-				required: true,
-				group: 'consumable'
-			},
-			{
-				item: items.consumable.flashGrenade,
-				required: false,
-				group: 'consumable'
-			}
-		],
+		'Light Assault': {
+			certifications: [
+				{ skill: skills.lightAssault.flakArmor, level: 3 },
+				{ skill: skills.lightAssault.c4, level: 1 },
+				{ skill: skills.lightAssault.flashGrenade, level: 1 },
+			],
+			equipment: [
+			]
+		},
 
-		'Infiltrator': [
-			{
-				item: items.infiltrator.flakArmor,
-				level: 3,
-				required: true,
-				group: 'equipment'
-			},
-			{
-				item: [
-					items.weapon.m77,
-					items.weapon.tsar,
-					items.weapon.sr7,
-					items.weapon.rams
-				],
-				required: true,
-				group: 'sniper-rifle'
-			},
-			{
-				item: [
-					items.weapon.smg46,
-					items.weapon.pdw16
-				],
-				required: true,
-				group: 'smg'
-			},
-			{
-				item: items.consumable.claymore,
-				required: false,
-				group: 'consumable'
-			},
-			{
-				item: items.consumable.empGrenade,
-				required: false,
-				group: 'consumable'
-			}
-		],
+		'Infiltrator': {
+			certifications: [
+				{ skill: skills.infiltrator.flakArmor, level: 3 },
+				{ skill: skills.infiltrator.claymoreMine, level: 2 },
+				{ skill: skills.infiltrator.empGrenade, level: 1 }
+			],
+			equipment: [
+				items.weapon.m77,
+				items.weapon.tsar,
+				items.weapon.sr7,
+				items.weapon.rams,
+				items.weapon.smg46,
+				items.weapon.pdw16
+			]
+		},
 
-		'Engineer': [
-			{
-				item: items.engineer.flakArmor,
-				level: 3,
-				required: true,
-				group: 'equipment'
-			},
-			{
-				item: items.weapon.trac5s,
-				required: true,
-				group: 'weapon'
-			},
-			{
-				item: items.weapon.trac5s.hsnv,
-				required: true,
-				group: 'weapon-attachment'
-			},
-			{
-				item: items.weapon.trac5s.suppressor,
-				required: true,
-				group: 'weapon-attachment'
-			},
-			{
-				item: items.weapon.trac5s.grenadeLauncher,
-				required: true,
-				group: 'weapon-launcher'
-			},
-			{
-				item: items.weapon.trac5s.smokeLauncher,
-				required: true,
-				group: 'weapon-launcher'
-			},
-			{
-				item: items.consumable.tankMine,
-				required: true,
-				group: 'consumable'
-			}
-		],
+		'Engineer': {
+			certifications: [
+				{ skill: skills.engineer.flakArmor, level: 3 },
+				{ skill: skills.engineer.tankMine, level: 1 },
+				{ skill: skills.engineer.avManaTurret, level: 1 }
+			],
+			equipment: [
+				items.weapon.trac5s,
+			]
+		},
 
-		'Medic': [
-			{
-				item: items.medic.medicalApplicator,
-				level: 4,
-				required: true,
-				group: 'weapon'
-			},
-			{
-				item: items.consumable.reviveGrenade,
-				required: false,
-				group: 'consumable'
-			}
-		],
+		'Medic': {
+			certifications: [
+				{ skill: skills.medic.medicalApplicator, level: 4 },
+				{ skill: skills.medic.naniteReviveGrenade, level: 1 }
+			],
+			equipment: [
+			]
+		},
 
-		'Sunderer': [
-			{
-				item: [
-					items.sunderer.frontBulldog,
-					items.sunderer.frontFury
-				],
-				required: true,
-				group: 'front-weapon'
-			},
-			{
-				item: [
-					items.sunderer.rearBulldog,
-					items.sunderer.rearFury
-				],
-				required: true,
-				group: 'rear-weapon'
-			},
-			//{
-			//	item: items.sunderer.ams,
-			//	required: true,
-			//	group: 'utility-slot'
-			//},
-			{
-				item: items.sunderer.mineGuard,
-				level: 3,
-				required: true,
-				group: 'defense-slot'
-			}
-		]
+		'Sunderer': {
+			certifications: [
+				{ skill: skills.sunderer.mineGuard, level: 3 },
+				{ skill: skills.sunderer.advancedMobileStation, level: 1 }
+			],
+			equipment: [
+				items.sunderer.frontBulldog,
+				items.sunderer.rearBulldog,
+				items.sunderer.frontFury,
+				items.sunderer.rearFury
+			]
+		},
 
 	},
 
 	'bravo squad': {
 
-		'Heavy Assault': [
-			{
-				item: items.heavyAssault.flakArmor,
-				level: 3,
-				required: true,
-				group: 'equipment'
-			},
-			{
-				item: [
-					items.weapon.skep,
-					items.weapon.t2
-				],
-				required: true,
-				group: 'rocket-launcher'
-			},
-			{
-				item: items.consumable.concussionGrenade,
-				required: false,
-				group: 'consumable'
-			}
-		],
+		'Heavy Assault': {
+			certifications: [
+				{ skill: skills.heavyAssault.flakArmor, level: 3 },
+				{ skill: skills.heavyAssault.concussionGrenade, level: 1 }
+			],
+			equipment: [
+				items.weapon.t2,
+				items.weapon.skep
+			]
+		},
 
-		'Engineer': [
-			{
-				item: items.engineer.flakArmor,
-				level: 3,
-				required: true,
-				group: 'equipment'
-			},
-			{
-				item: items.weapon.trac5s,
-				required: true,
-				group: 'weapon'
-			},
-			{
-				item: items.weapon.trac5s.hsnv,
-				required: true,
-				group: 'weapon-attachment'
-			},
-			{
-				item: items.weapon.trac5s.suppressor,
-				required: true,
-				group: 'weapon-attachment'
-			},
-			{
-				item: items.weapon.trac5s.grenadeLauncher,
-				required: true,
-				group: 'weapon-launcher'
-			},
-			{
-				item: items.weapon.trac5s.smokeLauncher,
-				required: true,
-				group: 'weapon-launcher'
-			},
-			{
-				item: items.engineer.avManaTurret,
-				required: true,
-				group: 'turret'
-			},
-			{
-				item: items.consumable.tankMine,
-				required: true,
-				group: 'consumable'
-			}
-		],
+		'Engineer': {
+			certifications: [
+				{ skill: skills.engineer.flakArmor, level: 3 },
+				{ skill: skills.engineer.tankMine, level: 1 }
+			],
+			equipment: [
+				items.weapon.trac5s,
+				items.engineer.avManaTurret
+			]
+		},
 
-		'Medic': [
-			{
-				item: items.medic.medicalApplicator,
-				level: 4,
-				required: true,
-				group: 'weapon'
-			},
-			{
-				item: items.consumable.reviveGrenade,
-				required: false,
-				group: 'consumable'
-			}
-		],
+		'Medic': {
+			certifications: [
+				{ skill: skills.medic.medicalApplicator, level: 4 },
+				{ skill: skills.medic.naniteReviveGrenade, level: 1 }
+			],
+			equipment: [
+			]
+		},
 
-		'Prowler': [
-			{
-				item: items.prowler.p2120he,
-				required: true,
-				group: 'primary'
-			},
-			{
-				item: [
-					items.prowler.walker,
-					items.prowler.ranger,
-					items.prowler.halberd,
-					items.prowler.vulcan
-				],
-				required: true,
-				group: 'secondary'
-			},
-			{
-				item: items.prowler.anchoredMode,
-				level: 2,
-				required: true,
-				group: 'utility-slot'
-			},
-			{
-				item: items.prowler.mineGuard,
-				level: 3,
-				required: true,
-				group: 'defense-slot'
-			}
-		],
+		'Prowler': {
+			certifications: [
+				{ skill: skills.prowler.anchoredMode, level: 2 },
+				{ skill: skills.prowler.mineGuard, level: 3 }
+			],
+			equipment: [
+				items.prowler.p2120he,
+				items.prowler.walker,
+				items.prowler.ranger,
+				items.prowler.halberd,
+				items.prowler.vulcan
+			]
+		},
 
-		'Sunderer': [
-			{
-				item: [
-					items.sunderer.frontWalker,
-					items.sunderer.frontRanger
-				],
-				required: true,
-				group: 'front-weapon'
-			},
-			{
-				item: [
-					items.sunderer.rearWalker,
-					items.sunderer.rearRanger
-				],
-				required: true,
-				group: 'rear-weapon'
-			},
-			{
-				item: items.sunderer.ams,
-				required: true,
-				group: 'utility-slot'
-			},
-			{
-				item: [
-					{
-						item: items.sunderer.ammoDispenser,
-						level: 1
-					},
-					{
-						item: items.sunderer.proximityRepair,
-						level: 5
-					}
-				],
-				required: true,
-				group: 'defense-slot'
-			}
-		],
+		'Sunderer': {
+			certifications: [
+				{ skill: skills.sunderer.advancedMobileStation, level: 1 },
+				{ skill: skills.sunderer.vehicleAmmoDispenser, level: 1 },
+				{ skill: skills.sunderer.naniteProximityRepairSystem, level: 6 }
+			],
+			equipment: [
+				items.sunderer.frontWalker,
+				items.sunderer.frontRanger,
+				items.sunderer.rearWalker,
+				items.sunderer.rearRanger
+			]
+		},
 
-		'Lightning': [
-			{
-				item: items.lightning.skyguard,
-				required: true,
-				group: 'primary'
-			},
-			{
-				item: items.lightning.fireSuppression,
-				level: 3,
-				required: true,
-				group: 'utility-slot'
-			},
-			{
-				item: items.lightning.mineGuard,
-				level: 3,
-				required: true,
-				group: 'defense-slot'
-			}
-		]
+		'Lightning': {
+			certifications: [
+				{ skill: skills.lightning.fireSuppression, level: 3 },
+				{ skill: skills.lightning.mineGuard, level: 3 }
+			],
+			equipment: [
+				items.lightning.skyguard
+			]
+		}
 
 	}
 

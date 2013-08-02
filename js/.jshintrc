@@ -18,10 +18,10 @@
 	"jquery": true,
 
 	"globals": {
-		"CharacterItems": true,
-		"EquipmentRequirements": true,
 		"EventEmitter": true,
+		"Character": true,
 		"items": true,
+		"skills": true,
 		"qualifications": true,
 		"MemberLoader": true,
 		"MemberTableBuilder": true
