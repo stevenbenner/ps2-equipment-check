@@ -64,6 +64,12 @@ var items = {
 			8130
 		]
 	},
+	max: {
+		leftMercy: 7518,
+		rightMercy: 15030,
+		leftFracture: 16030,
+		rightFracture: 16031
+	},
 	consumable: {
 		claymore: 429,
 		c4: 432,
