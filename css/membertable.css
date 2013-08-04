@@ -25,10 +25,14 @@ td:nth-child(2) {
 }
 
 /* Squad Tab Display Settings */
-.alpha-squad-only .bravo-squad, .alpha-squad-only .charlie-squad, .alpha-squad-only .delta-squad,
-.bravo-squad-only .alpha-squad, .bravo-squad-only .charlie-squad, .bravo-squad-only .delta-squad,
-.charlie-squad-only .alpha-squad, .charlie-squad-only .bravo-squad, .charlie-squad-only .delta-squad,
-.delta-squad-only .alpha-squad, .delta-squad-only .bravo-squad, .delta-squad-only .charlie-squad {
+.alpha-squad-only .bravo-squad, .alpha-squad-only .charlie-squad, .alpha-squad-only .delta-squad, .alpha-squad-only .veteran, .alpha-squad-only .echo-squad, .alpha-squad-only .soldier, .alpha-squad-only .echo-vehicle,
+.bravo-squad-only .alpha-squad, .bravo-squad-only .charlie-squad, .bravo-squad-only .delta-squad, .bravo-squad-only .veteran, .bravo-squad-only .echo-squad, .bravo-squad-only .soldier, .bravo-squad-only .echo-vehicle,
+.charlie-squad-only .alpha-squad, .charlie-squad-only .bravo-squad, .charlie-squad-only .delta-squad, .charlie-squad-only .veteran, .charlie-squad-only .echo-squad, .charlie-squad-only .soldier, .charlie-squad-only .echo-vehicle,
+.delta-squad-only .alpha-squad, .delta-squad-only .bravo-squad, .delta-squad-only .charlie-squad, .delta-squad-only .veteran, .delta-squad-only .echo-squad, .delta-squad-only .soldier, .delta-squad-only .echo-vehicle,
+.soldier-only .alpha-squad, .soldier-only .bravo-squad, .soldier-only .charlie-squad, .soldier-only .delta-squad, .soldier-only .echo-squad, .soldier-only .veteran, .soldier-only .echo-vehicle,
+.veteran-only .alpha-squad, .veteran-only .bravo-squad, .veteran-only .charlie-squad, .veteran-only .delta-squad, .veteran-only .echo-squad, .veteran-only .soldier, .veteran-only .echo-vehicle,
+.echo-squad-only .alpha-squad, .echo-squad-only .bravo-squad, .echo-squad-only .charlie-squad, .echo-squad-only .delta-squad, .echo-squad-only .veteran, .echo-squad-only .soldier, .echo-squad-only .echo-vehicle,
+.echo-vehicle-only .alpha-squad, .echo-vehicle-only .bravo-squad, .echo-vehicle-only .charlie-squad, .echo-vehicle-only .delta-squad, .echo-vehicle-only .veteran, .echo-vehicle-only .soldier, .echo-vehicle-only .echo-squad {
 	display: none;
 }
 
