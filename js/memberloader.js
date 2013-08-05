@@ -10,11 +10,11 @@ function MemberLoader(outfitId, concurrency) {
 		me = this,
 		activeConnections = 0;
 
-	// public properties
-	me.memberCount = 0;
-
 	// default concurrency
 	concurrency = concurrency || 4;
+
+	// public properties
+	me.memberCount = 0;
 
 	me.start = function() {
 		me.emit('start');
