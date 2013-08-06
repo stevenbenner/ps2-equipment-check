@@ -16,6 +16,8 @@ function MemberLoader(outfitId, concurrency) {
 	// public properties
 	me.memberCount = 0;
 
+	// methods
+
 	me.start = function() {
 		me.emit('start');
 		$.ajax({
