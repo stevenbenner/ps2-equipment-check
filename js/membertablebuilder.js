@@ -48,8 +48,7 @@ function MemberTableBuilder(table, rules) {
 	};
 
 	this.buildNav = function(nav) {
-		var hideOfflineCheck = nav.find('#hide-offline'),
-			hideMissingCheck = nav.find('#hide-missing');
+		var hideOfflineCheck = nav.find('#hide-offline');
 
 		$.each(rules, function(squad) {
 			var squadSlug = getSlug(squad),
@@ -60,8 +59,7 @@ function MemberTableBuilder(table, rules) {
 
 			navButton.on('click', function() {
 				var $this = $(this),
-					nooffline = table.hasClass('nooffline'),
-					nomissing = table.hasClass('nomissing');
+					nooffline = table.hasClass('nooffline');
 
 				if ($this.hasClass('selected')) {
 					return;
@@ -75,9 +73,6 @@ function MemberTableBuilder(table, rules) {
 				if (nooffline) {
 					table.addClass('nooffline');
 				}
-				if (nomissing) {
-					table.addClass('nomissing');
-				}
 			});
 
 			nav.append(navButton);
@@ -89,13 +84,6 @@ function MemberTableBuilder(table, rules) {
 		hideOfflineCheck.on('click', handleOfflineCheckbox);
 		table.removeClass('nooffline');
 		handleOfflineCheckbox();
-
-		function handleMissingCheckbox() {
-			toggleClass(hideMissingCheck, 'nomissing');
-		}
-		hideMissingCheck.on('click', handleMissingCheckbox);
-		table.removeClass('nomissing');
-		handleMissingCheckbox();
 
 		nav.find('li.primary').first().addClass('selected');
 	};

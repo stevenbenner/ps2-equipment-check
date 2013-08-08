@@ -40,10 +40,6 @@ td:nth-child(2) {
 .nooffline .offline {
 	display: none;
 }
-/* Hide Missing Equipment Display Settings */
-.nomissing .notok span {
-	display: none;
-}
 
 /* Online/Offline Status Indicator */
 .status {
