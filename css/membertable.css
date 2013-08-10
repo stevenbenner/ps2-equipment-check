@@ -25,10 +25,10 @@ td:nth-child(2) {
 }
 
 /* Squad Tab Display Settings */
-.soldier-only .echo-squad, .soldier-only .veteran, .soldier-only .echo-vehicle,
-.veteran-only .echo-squad, .veteran-only .soldier, .veteran-only .echo-vehicle,
-.echo-squad-only .veteran, .echo-squad-only .soldier, .echo-squad-only .echo-vehicle,
-.echo-vehicle-only .veteran, .echo-vehicle-only .soldier, .echo-vehicle-only .echo-squad {
+.soldier-only .veteran, .soldier-only .echo-squad, .soldier-only .echo-vehicle,
+.veteran-only .soldier, .veteran-only .echo-squad, .veteran-only .echo-vehicle,
+.echo-squad-only .soldier, .echo-squad-only .veteran, .echo-squad-only .echo-vehicle,
+.echo-vehicle-only .soldier, .echo-vehicle-only .veteran, .echo-vehicle-only .echo-squad {
 	display: none;
 }
 
