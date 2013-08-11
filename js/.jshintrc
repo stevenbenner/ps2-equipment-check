@@ -20,9 +20,7 @@
 	"globals": {
 		"EventEmitter": true,
 		"Character": true,
-		"items": true,
-		"skills": true,
-		"qualifications": true,
+		"Qualifications": true,
 		"MemberLoader": true,
 		"MemberTableBuilder": true
 	}

@@ -2,6 +2,16 @@ var OUTFIT_ID = '37511414368206626';
 
 // onready
 $(function() {
+	// get JSON resources
+	$.getJSON('js/definitions/skills.json').done(function(skills) {
+		$.getJSON('js/definitions/items.json').done(function(items) {
+			// run it
+			run(new Qualifications(skills, items));
+		});
+	});
+});
+
+function run(qualifications) {
 	var navBar = $('nav ul'),
 		membersTable = $('#members'),
 		statusBox = $('#status'),
@@ -30,4 +40,4 @@ $(function() {
 
 	statusBox.slideDown(500);
 	memberLoader.start();
-});
+}
