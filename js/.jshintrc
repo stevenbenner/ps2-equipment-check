@@ -18,10 +18,10 @@
 	"jquery": true,
 
 	"globals": {
-		"EventEmitter": true,
 		"Character": true,
-		"Qualifications": true,
+		"EventEmitter": true,
 		"MemberLoader": true,
-		"MemberTableBuilder": true
+		"MemberTableBuilder": true,
+		"Qualifications": true
 	}
 }
