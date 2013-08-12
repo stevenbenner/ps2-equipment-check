@@ -4,29 +4,7 @@ var PLAYERS_URL = 'https://players.planetside2.com/#!/';
 
 function MemberTableBuilder(table, rules) {
 
-	function getSlug(str) {
-		return str.replace(/\s/, '-');
-	}
-
-	function forEachRule(callback) {
-		$.each(rules, function(squad, types) {
-			var squadSlug = getSlug(squad);
-			$.each(types, function(type, requirements) {
-				callback.call(this, squadSlug, type, requirements);
-			});
-		});
-	}
-
-	function toggleClass(element, className) {
-		var navButton = element.parent();
-		if (element.is(':checked')) {
-			table.addClass(className);
-			navButton.addClass('selected');
-		} else {
-			table.removeClass(className);
-			navButton.removeClass('selected');
-		}
-	}
+	// public methods
 
 	this.buildHeader = function() {
 		var headerRow = $('<tr>');
@@ -140,5 +118,31 @@ function MemberTableBuilder(table, rules) {
 
 		table.append(row);
 	};
+
+	// private methods
+
+	function getSlug(str) {
+		return str.replace(/\s/, '-');
+	}
+
+	function forEachRule(callback) {
+		$.each(rules, function(squad, types) {
+			var squadSlug = getSlug(squad);
+			$.each(types, function(type, requirements) {
+				callback.call(this, squadSlug, type, requirements);
+			});
+		});
+	}
+
+	function toggleClass(element, className) {
+		var navButton = element.parent();
+		if (element.is(':checked')) {
+			table.addClass(className);
+			navButton.addClass('selected');
+		} else {
+			table.removeClass(className);
+			navButton.removeClass('selected');
+		}
+	}
 
 }
