@@ -8,8 +8,7 @@ function Qualifications(skills, items) {
 				certifications: [
 					{ skill: skills.heavyAssault.flakArmor, level: 3 }
 				],
-				equipment: [
-				]
+				equipment: []
 			},
 
 			'Light Assault': {
@@ -189,8 +188,7 @@ function Qualifications(skills, items) {
 					{ skill: skills.universal.medicalKit, level: 3 },
 					{ skill: skills.universal.restorationKit, level: 3 }
 				],
-				equipment: [
-				]
+				equipment: []
 			},
 
 			'Infiltrator': {
@@ -226,8 +224,7 @@ function Qualifications(skills, items) {
 				certifications: [
 					{ skill: skills.squadLeader.priorityDeployment, level: 4 }
 				],
-				equipment: [
-				]
+				equipment: []
 			}
 
 		},
@@ -244,8 +241,7 @@ function Qualifications(skills, items) {
 					{ skill: skills.sunderer.vehicleStealth, level: 1 },
 					{ skill: skills.sunderer.naniteProximityRepairSystem, level: 6 }
 				],
-				equipment: [
-				]
+				equipment: []
 			},
 
 			'Prowler': {
@@ -253,16 +249,14 @@ function Qualifications(skills, items) {
 					{ skill: skills.prowler.anchoredMode, level: 4 },
 					{ skill: skills.prowler.reinforcedSideArmor, level: 1 }
 				],
-				equipment: [
-				]
+				equipment: []
 			},
 
 			'Harasser': {
 				certifications: [
 					{ skill: skills.harasser.compositeArmor, level: 4 }
 				],
-				equipment: [
-				]
+				equipment: []
 			},
 
 			'Mosquito': {
@@ -281,8 +275,7 @@ function Qualifications(skills, items) {
 					{ skill: skills.liberator.acquisitionTimer, level: 6 },
 					{ skill: skills.liberator.naniteAutoRepair, level: 5 }
 				],
-				equipment: [
-				]
+				equipment: []
 			},
 
 		}
