@@ -276,7 +276,7 @@ function Qualifications(skills, items) {
 					{ skill: skills.liberator.naniteAutoRepair, level: 5 }
 				],
 				equipment: []
-			},
+			}
 
 		}
 	};
