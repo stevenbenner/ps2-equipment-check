@@ -19,10 +19,9 @@ function MemberTableBuilder(table, rules) {
 			headerRow.append(cell);
 		});
 
-		table.append(headerRow);
-
 		table.removeClass();
 		table.addClass(getSlug(Object.keys(rules)[0]) + '-only');
+		table.append(headerRow);
 	};
 
 	this.buildNav = function(nav) {
