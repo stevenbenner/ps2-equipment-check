@@ -53,6 +53,31 @@ td:nth-child(2) {
 	background-color: #d00;
 }
 
+/* Outfit Rank Icons */
+.rank {
+	display: inline-block;
+	background-repeat: no-repeat;
+	margin-right: 2px;
+	width: 24px;
+	height: 24px;
+	vertical-align: sub;
+}
+.rank.r1 {
+	background-image: url(../img/rank-1.png);
+}
+.rank.r2 {
+	background-image: url(../img/rank-2.png);
+}
+.rank.r3 {
+	background-image: url(../img/rank-3.png);
+}
+.rank.r4 {
+	background-image: url(../img/rank-4.png);
+}
+.rank.r5 {
+	background-image: url(../img/rank-5.png);
+}
+
 /* Equipment Output */
 .ok {
 	color: #afa;

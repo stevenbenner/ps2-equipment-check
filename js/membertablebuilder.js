@@ -74,6 +74,7 @@ function MemberTableBuilder(table, rules) {
 		anchor.attr('href', PLAYERS_URL + character.id);
 		anchor.attr('target', '_blank');
 
+		nameColumn.append($('<span>').addClass('rank r' + character.outfitRank));
 		nameColumn.append($('<span>').addClass('status'));
 		nameColumn.append(anchor);
 

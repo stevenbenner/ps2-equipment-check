@@ -57,8 +57,8 @@ function MemberLoader(outfitId, concurrency) {
 			url: CHARACTER_URL,
 			data: {
 				'character_id': characterId,
-				'c:resolve': 'item_full(name,item_id),online_status',
-				'c:show': 'name,battle_rank,character_id,online_status',
+				'c:resolve': 'item_full(name,item_id),outfit_member,online_status',
+				'c:show': 'name,battle_rank,character_id,outfit_member,online_status',
 				'c:lang': 'en',
 			},
 			dataType: 'jsonp'
