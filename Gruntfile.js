@@ -21,6 +21,7 @@ module.exports = function(grunt) {
 			css: {
 				src: [ 'css/*.css' ],
 				options: {
+					'adjoining-classes': false,
 					'box-model': false,
 					'bulletproof-font-face': false,
 					'fallback-colors': false,
