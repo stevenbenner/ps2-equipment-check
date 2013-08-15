@@ -1,9 +1,9 @@
 /* exported MemberLoader */
 
 // constants
-var OUTFIT_URL = 'http://census.soe.com/get/ps2:v2/outfit_member',
-	CHARACTER_URL = 'http://census.soe.com/get/ps2:v2/character',
-	SKILLS_URL = 'http://census.soe.com/get/ps2:v2/characters_skill';
+var OUTFIT_URL = 'https://census.soe.com/get/ps2:v2/outfit_member',
+	CHARACTER_URL = 'https://census.soe.com/get/ps2:v2/character',
+	SKILLS_URL = 'https://census.soe.com/get/ps2:v2/characters_skill';
 
 function MemberLoader(outfitId, concurrency) {
 	var memberList = [],
