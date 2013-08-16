@@ -14,6 +14,10 @@ function Character(characterData, skillsData) {
 	this.getCertLine = function(skillDefinition) {
 		var retObj = null;
 		$.each(skillsData.characters_skill_list, function(idx, skill) {
+			// if there is no skill details data then skip it
+			if (!skill.skill_id_join_skill) {
+				return;
+			}
 			if (skill.skill_id_join_skill.skill_line_id === skillDefinition.skill.skillLine.toString()) {
 				retObj = skill.skill_id_join_skill;
 				return false;
