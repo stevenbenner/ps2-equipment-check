@@ -103,6 +103,7 @@ function Qualifications(skills, items) {
 				],
 				equipment: [
 					items.weapon.pdw16,
+					items.weapon.ns7pdw,
 					items.weapon.rams
 				]
 			},
@@ -202,6 +203,7 @@ function Qualifications(skills, items) {
 				],
 				equipment: [
 					items.weapon.pdw16,
+					items.weapon.ns7pdw,
 					items.weapon.rams
 				]
 			},
