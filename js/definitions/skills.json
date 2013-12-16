@@ -134,10 +134,11 @@
 		},
 		"grenadeBandolier": {
 			"name": "Grenade Bandolier",
-			"skillLine": 1130,
+			"skillLine": 1437,
 			"skills": [
-				4422,
-				4423
+				1238,
+				1239,
+				22395
 			]
 		},
 		"ammunitionBelt": {
