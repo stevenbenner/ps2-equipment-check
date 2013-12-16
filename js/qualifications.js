@@ -240,7 +240,7 @@ function Qualifications(skills, items) {
 					{ skill: skills.sunderer.blockadeArmor, level: 3 },
 					{ skill: skills.sunderer.advancedMobileStation, level: 1 },
 					{ skill: skills.sunderer.gateShieldDiffuser, level: 3 },
-					{ skill: skills.sunderer.vehicleStealth, level: 1 },
+					{ skill: skills.sunderer.vehicleStealth, level: 4 },
 					{ skill: skills.sunderer.naniteProximityRepairSystem, level: 6 }
 				],
 				equipment: []
