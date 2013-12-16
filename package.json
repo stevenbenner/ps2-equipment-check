@@ -2,6 +2,6 @@
 	"devDependencies": {
 		"grunt": "~0.4",
 		"grunt-contrib-jshint": "~0.7",
-		"grunt-contrib-csslint": "~0.1"
+		"grunt-contrib-csslint": "~0.2"
 	}
 }
