@@ -50,13 +50,13 @@
 		},
 		"nanoweaveArmor": {
 			"name": "Nanoweave Armor",
-			"skillLine": 935,
+			"skillLine": 16728,
 			"skills": [
-				3693,
-				3694,
-				3695,
-				3696,
-				3697
+				22467,
+				22468,
+				22469,
+				22470,
+				22471
 			]
 		},
 		"resistShield": {
@@ -81,13 +81,13 @@
 		},
 		"nanoweaveArmor": {
 			"name": "Nanoweave Armor",
-			"skillLine": 974,
+			"skillLine": 16730,
 			"skills": [
-				3848,
-				3849,
-				3850,
-				3851,
-				3852
+				22477,
+				22478,
+				22479,
+				22480,
+				22481
 			]
 		},
 		"flakArmor": {
@@ -173,13 +173,13 @@
 		},
 		"nanoweaveArmor": {
 			"name": "Nanoweave Armor",
-			"skillLine": 962,
+			"skillLine": 16727,
 			"skills": [
-				3795,
-				3796,
-				3797,
-				3798,
-				3799
+				22462,
+				22463,
+				22464,
+				22465,
+				22466
 			]
 		},
 		"nanoArmorKit": {
@@ -251,13 +251,13 @@
 		},
 		"nanoweaveArmor": {
 			"name": "Nanoweave Armor",
-			"skillLine": 919,
+			"skillLine": 16726,
 			"skills": [
-				3616,
-				3617,
-				3618,
-				3619,
-				3620
+				22457,
+				22458,
+				22459,
+				22460,
+				22461
 			]
 		},
 		"nanoRegenDevice": {
@@ -325,13 +325,13 @@
 		},
 		"nanoweaveArmor": {
 			"name": "Nanoweave Armor",
-			"skillLine": 51,
+			"skillLine": 16729,
 			"skills": [
-				174,
-				175,
-				176,
-				177,
-				178
+				22472,
+				22473,
+				22474,
+				22475,
+				22476
 			]
 		},
 		"reconDetectDevice": {
