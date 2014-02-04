@@ -99,7 +99,7 @@ function MemberLoader(outfitId, serviceId, concurrency) {
 			SERVICE_HOST,
 			'/s:',
 			serviceId,
-			'/get/ps2:v2/',
+			'/json/get/ps2:v2/',
 			serviceName
 		].join('');
 	}
