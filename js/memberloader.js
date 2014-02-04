@@ -59,7 +59,7 @@ function MemberLoader(outfitId, concurrency) {
 				'character_id': characterId,
 				'c:resolve': 'item_full(name,item_id),outfit_member,online_status',
 				'c:show': 'name,battle_rank,character_id,outfit_member,online_status',
-				'c:lang': 'en',
+				'c:lang': 'en'
 			},
 			dataType: 'jsonp'
 		}).done(function(charData) {
