@@ -1,11 +1,13 @@
 /* exported MemberLoader */
 
 // constants
-var OUTFIT_URL = 'https://census.soe.com/get/ps2:v2/outfit_member',
-	CHARACTER_URL = 'https://census.soe.com/get/ps2:v2/character',
-	SKILLS_URL = 'https://census.soe.com/get/ps2:v2/characters_skill';
+var SERVICE_PROTO = 'https',
+	SERVICE_HOST = 'census.soe.com',
+	SERVICE_OUTFIT = 'outfit_member',
+	SERVICE_CHARACTER = 'character',
+	SERVICE_SKILLS = 'characters_skill';
 
-function MemberLoader(outfitId, concurrency) {
+function MemberLoader(outfitId, serviceId, concurrency) {
 	var memberList = [],
 		me = this,
 		activeConnections = 0;
@@ -21,7 +23,7 @@ function MemberLoader(outfitId, concurrency) {
 	me.start = function() {
 		me.emit('start');
 		$.ajax({
-			url: OUTFIT_URL,
+			url: getServiceEndpoint(SERVICE_OUTFIT),
 			data: {
 				'outfit_id': outfitId,
 				'c:resolve': 'character(character_id)',
@@ -54,7 +56,7 @@ function MemberLoader(outfitId, concurrency) {
 		activeConnections++;
 
 		$.ajax({
-			url: CHARACTER_URL,
+			url: getServiceEndpoint(SERVICE_CHARACTER),
 			data: {
 				'character_id': characterId,
 				'c:resolve': 'item_full(name,item_id),outfit_member,online_status',
@@ -69,7 +71,7 @@ function MemberLoader(outfitId, concurrency) {
 				return;
 			}
 			$.ajax({
-				url: SKILLS_URL,
+				url: getServiceEndpoint(SERVICE_SKILLS),
 				data: {
 					'character_id': characterId,
 					'c:join': 'skill^show:name\'skill_id\'skill_line_id',
@@ -89,6 +91,18 @@ function MemberLoader(outfitId, concurrency) {
 			});
 		});
 	};
+
+	function getServiceEndpoint(serviceName) {
+		return [
+			SERVICE_PROTO,
+			'://',
+			SERVICE_HOST,
+			'/s:',
+			serviceId,
+			'/get/ps2:v2/',
+			serviceName
+		].join('');
+	}
 }
 
 MemberLoader.prototype = new EventEmitter();

@@ -1,4 +1,5 @@
 var OUTFIT_ID = '37511414368206626';
+var SERVICE_ID = 'soe';
 
 // onready
 $(function() {
@@ -16,7 +17,7 @@ function run(qualifications) {
 		membersTable = $('#members'),
 		statusBox = $('#status'),
 		statusText = statusBox.find('span'),
-		memberLoader = new MemberLoader(OUTFIT_ID),
+		memberLoader = new MemberLoader(OUTFIT_ID, SERVICE_ID),
 		tableBuilder = new MemberTableBuilder(membersTable, qualifications),
 		membersLoaded = 0;
 
