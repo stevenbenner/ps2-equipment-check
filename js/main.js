@@ -1,5 +1,5 @@
-var OUTFIT_ID = '37511414368206626';
-var SERVICE_ID = 'soe';
+var OUTFIT_ID = '37511414368206626',
+	SERVICE_ID = 'soe';
 
 // onready
 $(function() {
