@@ -194,6 +194,14 @@
 				3834
 			]
 		},
+		"claymoreMine": {
+			"name": "Claymore Mine",
+			"skillLine": 959,
+			"skills": [
+				3784,
+				3785
+			]
+		},
 		"tankMine": {
 			"name": "Tank Mine",
 			"skillLine": 960,
