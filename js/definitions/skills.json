@@ -602,6 +602,48 @@
 				3985,
 				3986
 			]
+		},
+		"requestReinforcements": {
+			"name": "Request Reinforcements",
+			"skillLine": 1004,
+			"skills": [
+				3974
+			]
+		},
+		"rallyPointGreen": {
+			"name": "Rally Point - Green",
+			"skillLine": 1005,
+			"skills": [
+				3977
+			]
+		},
+		"rallyPointOrange": {
+			"name": "Rally Point - Orange",
+			"skillLine": 1006,
+			"skills": [
+				3976
+			]
+		},
+		"rallyPointPurple": {
+			"name": "Rally Point - Purple",
+			"skillLine": 1007,
+			"skills": [
+				3978
+			]
+		},
+		"rallyPointYellow": {
+			"name": "Rally Point - Yellow",
+			"skillLine": 16124,
+			"skills": [
+				3979
+			]
+		},
+		"commandCommChannel": {
+			"name": "Command Comm. Channel",
+			"skillLine": 16125,
+			"skills": [
+				3981
+			]
 		}
 	}
 }
