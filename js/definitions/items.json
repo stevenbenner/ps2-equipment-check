@@ -64,6 +64,8 @@
 	"max": {
 		"leftMercy": 7518,
 		"rightMercy": 15030,
+		"leftPounder": 15001,
+		"rightPounder": 15013,
 		"leftBurster": 15004,
 		"rightBurster": 15016,
 		"leftFracture": 16030,
