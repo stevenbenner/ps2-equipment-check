@@ -97,6 +97,7 @@
 	},
 	"prowler": {
 		"walker": 4003,
+		"p2120ap": 4008,
 		"p2120he": 4009,
 		"ranger": 4010,
 		"halberd": 4015,
