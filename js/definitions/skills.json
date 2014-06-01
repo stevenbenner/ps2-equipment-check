@@ -81,6 +81,13 @@
 		}
 	},
 	"lightAssault": {
+		"smokeGrenade": {
+			"name": "Smoke Grenade",
+			"skillLine": 971,
+			"skills": [
+				3840
+			]
+		},
 		"flashGrenade": {
 			"name": "Flash Grenade",
 			"skillLine": 972,
