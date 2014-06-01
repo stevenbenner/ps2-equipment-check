@@ -356,6 +356,15 @@
 				168
 			]
 		},
+		"grenadeBandolier": {
+			"name": "Grenade Bandolier",
+			"skillLine": 1436,
+			"skills": [
+				1236,
+				1237,
+				22394
+			]
+		},
 		"nanoweaveArmor": {
 			"name": "Nanoweave Armor",
 			"skillLine": 16729,
