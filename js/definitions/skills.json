@@ -595,6 +595,16 @@
 		}
 	},
 	"harasser": {
+		"fireSuppressionSystem": {
+			"name": "Fire Suppression System",
+			"skillLine": 2665,
+			"skills": [
+				12885,
+				12886,
+				12887,
+				12888
+			]
+		},
 		"compositeArmor": {
 			"name": "Composite Armor",
 			"skillLine": 2676,
