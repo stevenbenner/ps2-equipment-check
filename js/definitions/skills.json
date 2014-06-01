@@ -525,6 +525,15 @@
 				7930,
 				7931
 			]
+		},
+		"rivalCombatChassis": {
+			"name": "Rival Combat Chassis",
+			"skillLine": 1171,
+			"skills": [
+				11333,
+				11334,
+				11335
+			]
 		}
 	},
 	"prowler": {
