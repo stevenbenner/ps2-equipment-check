@@ -388,6 +388,17 @@
 				233
 			]
 		},
+		"motionSpotter": {
+			"name": "Motion Spotter",
+			"skillLine": 16626,
+			"skills": [
+				22280,
+				22281,
+				22282,
+				22283,
+				22284
+			]
+		},
 		"flakArmor": {
 			"name": "Flak Armor",
 			"skillLine": 5581,
