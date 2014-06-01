@@ -372,6 +372,13 @@
 				22394
 			]
 		},
+		"decoyGrenade": {
+			"name": "Decoy Grenade",
+			"skillLine": 5598,
+			"skills": [
+				5909
+			]
+		},
 		"nanoweaveArmor": {
 			"name": "Nanoweave Armor",
 			"skillLine": 16729,
