@@ -4,11 +4,12 @@ var OUTFIT_ID = '37511414368206626',
 // onready
 $(function() {
 	// get JSON resources
-	$.getJSON('js/definitions/skills.json').done(function(skills) {
-		$.getJSON('js/definitions/items.json').done(function(items) {
-			// run it
-			run(new Qualifications(skills, items));
-		});
+	$.when(
+		$.getJSON('js/definitions/skills.json'),
+		$.getJSON('js/definitions/items.json')
+	).done(function(skills, items) {
+		// run it
+		run(new Qualifications(skills[0], items[0]));
 	});
 });
 
