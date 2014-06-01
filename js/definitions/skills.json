@@ -576,6 +576,13 @@
 				6574
 			]
 		},
+		"reinforcedTopArmor": {
+			"name": "Reinforced Top Armor",
+			"skillLine": 2007,
+			"skills": [
+				2936
+			]
+		},
 		"mineGuard": {
 			"name": "Mine Guard",
 			"skillLine": 2058,
