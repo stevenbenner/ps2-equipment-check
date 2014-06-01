@@ -29,6 +29,13 @@
 				3680
 			]
 		},
+		"antiVehicleGrenade": {
+			"name": "Anti Vehicle Grenade",
+			"skillLine": 932,
+			"skills": [
+				3683
+			]
+		},
 		"c4": {
 			"name": "C-4 (explosives)",
 			"skillLine": 933,
