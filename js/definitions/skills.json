@@ -308,6 +308,15 @@
 				3664
 			]
 		},
+		"grenadeBandolier": {
+			"name": "Grenade Bandolier",
+			"skillLine": 1433,
+			"skills": [
+				1230,
+				1231,
+				22391
+			]
+		},
 		"flakArmor": {
 			"name": "Flak Armor",
 			"skillLine": 5584,
