@@ -280,6 +280,17 @@
 				3615
 			]
 		},
+		"regenerationField": {
+			"name": "Regeneration Field",
+			"skillLine": 930,
+			"skills": [
+				3670,
+				3671,
+				3672,
+				3673,
+				3674
+			]
+		},
 		"nanoweaveArmor": {
 			"name": "Nanoweave Armor",
 			"skillLine": 16726,
