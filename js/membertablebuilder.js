@@ -92,7 +92,7 @@ function MemberTableBuilder(table, rules) {
 					level;
 
 				if (cert) {
-					level = $.inArray(+cert.skill_id, val.skill.skills) + 1;
+					level = $.inArray(Number(cert.skill_id), val.skill.skills) + 1;
 					if (level < val.level) {
 						span.addClass('notok');
 					} else {
