@@ -17,6 +17,20 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		jscs: {
+			grunt: {
+				src: [ 'Gruntfile.js' ],
+				options: {
+					config: '.jscsrc'
+				}
+			},
+			js: {
+				src: [ 'js/*.js' ],
+				options: {
+					config: '.jscsrc'
+				}
+			}
+		},
 		csslint: {
 			css: {
 				src: [ 'css/*.css' ],
@@ -35,7 +49,8 @@ module.exports = function(grunt) {
 	// load grunt plugins
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-csslint');
+	grunt.loadNpmTasks('grunt-jscs-checker');
 
 	// register grunt tasks
-	grunt.registerTask('default', [ 'jshint', 'csslint' ]);
+	grunt.registerTask('default', [ 'jshint', 'jscs', 'csslint' ]);
 };
