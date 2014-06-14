@@ -31,6 +31,14 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		jsonlint: {
+			definitions: {
+				src: [ 'js/definitions/*.json' ]
+			},
+			project: {
+				src: [ '.jscsrc', '.jshintrc', 'package.json' ]
+			}
+		},
 		csslint: {
 			css: {
 				src: [ 'css/*.css' ],
@@ -50,7 +58,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-csslint');
 	grunt.loadNpmTasks('grunt-jscs-checker');
+	grunt.loadNpmTasks('grunt-jsonlint');
 
 	// register grunt tasks
-	grunt.registerTask('default', [ 'jshint', 'jscs', 'csslint' ]);
+	grunt.registerTask('default', [ 'jsonlint', 'jshint', 'jscs', 'csslint' ]);
 };
