@@ -146,6 +146,9 @@
 			2969
 		]
 	},
+	"harasser": {
+		"halberd": 6120
+	},
 	"mosquito": {
 		"hellfireRocketPods": 4903,
 		"m18rotary": 4911
