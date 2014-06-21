@@ -3,7 +3,7 @@
 		"grunt": "~0.4",
 		"grunt-contrib-jshint": "~0.10",
 		"grunt-contrib-csslint": "~0.2",
-		"grunt-jscs-checker": "~0.4",
+		"grunt-jscs-checker": "~0.5",
 		"grunt-jsonlint": "~1.0"
 	}
 }
