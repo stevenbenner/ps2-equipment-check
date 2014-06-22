@@ -7,6 +7,7 @@ function Character(characterData, skillsData) {
 	this.name = characterData.character_list[0].name.first;
 	this.rank = characterData.character_list[0].battle_rank.value;
 	this.outfitRank = characterData.character_list[0].outfit_member.rank_ordinal;
+	this.outfitRankTitle = characterData.character_list[0].outfit_member.rank;
 	this.online = characterData.character_list[0].online_status === '1';
 	this.lastLogin = characterData.character_list[0].times.last_login_date;
 
