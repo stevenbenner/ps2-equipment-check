@@ -1,7 +1,6 @@
 /* exported Character */
 
 function Character(characterData, skillsData) {
-
 	// properties
 	this.id = characterData.character_list[0].character_id;
 	this.name = characterData.character_list[0].name.first;
@@ -29,15 +28,14 @@ function Character(characterData, skillsData) {
 		return retObj;
 	};
 
-	this.getEquipment = function(id) {
-		var equipstr = 'n/a';
+	this.hasEquipment = function(id) {
+		var found = false;
 		$.each(characterData.character_list[0].items, function(idx, item) {
 			if (item.item_id === id.toString()) {
-				equipstr = item.name.en;
+				found = true;
 				return false;
 			}
 		});
-		return equipstr;
+		return found;
 	};
-
 }

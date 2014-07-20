@@ -1,0 +1,254 @@
+/* Member Tree Styles */
+#member-tree {
+	position: relative;
+	height: 915px;
+}
+#member-tree > div {
+	position: absolute;
+	border-radius: 16px;
+	border: 1px solid #197576;
+	width: 150px;
+	height: 120px;
+	left: 50%;
+	font-size: 16px;
+	text-align: center;
+	line-height: 120px;
+	transition: all 0.5s ease 0s;
+	box-shadow: 0 0 10px #000;
+}
+#member-tree > div:hover {
+	font-size: 18px;
+	transition: all 0.5s ease 0s;
+}
+#member-tree > div:before,
+#member-tree > div:after {
+	content: "";
+	display: block;
+	position: absolute;
+}
+#member-tree .rank {
+	border: 2px solid #ffd700;
+}
+#member-tree .na {
+	opacity: 0.5;
+}
+#member-tree .na:hover {
+	opacity: 1.0;
+}
+#member-tree div p {
+	font-size: 13px;
+	line-height: 12px;
+	margin-top: -20px;
+}
+#member-tree div div {
+	height: 100%;
+}
+
+/* Equipment Output */
+.ok {
+	color: #afa;
+	font-weight: bold;
+}
+.notok {
+	color: #faa;
+}
+
+/* Rank Box Grades */
+.pass {
+	background-image: url("../img/bg-rank-complete.png");
+	background-position: right top;
+	background-repeat: no-repeat;
+}
+.fail {
+	background-image: url("../img/bg-rank-inprogress.png");
+	background-position: right top;
+	background-repeat: no-repeat;
+}
+.fail.na {
+	background-image: url("../img/bg-rank-notavailable.png");
+	background-position: right top;
+	background-repeat: no-repeat;
+}
+
+/* Rank Box Position Styles */
+#soldier {
+	margin-left: -76px;
+}
+#veteran {
+	top: 150px;
+	margin-left: -76px;
+}
+#basic-tanks {
+	top: 150px;
+	margin-left: 450px;
+}
+#sunderer {
+	top: 600px;
+	margin-left: 275px;
+}
+#prowler {
+	margin-left: 450px;
+	top: 300px;
+}
+#lightning {
+	margin-left: 450px;
+	top: 450px;
+}
+#harasser {
+	margin-left: 450px;
+	top: 600px;
+}
+#commander {
+	top: 300px;
+	margin-left: -601px;
+}
+#combat-medic {
+	top: 300px;
+	margin-left: -250px;
+}
+#light-assault {
+	top: 300px;
+	margin-left: -75px;
+}
+#heavy-assault {
+	top: 300px;
+	margin-left: 100px;
+}
+#engineer {
+	top: 450px;
+	margin-left: -250px;
+}
+#infiltrator {
+	top: 450px;
+	margin-left: -75px;
+}
+#max {
+	top: 450px;
+	margin-left: 100px;
+}
+#echo-specialist {
+	top: 750px;
+	margin-left: -251px;
+}
+#echo-covert-ops {
+	top: 750px;
+	margin-left: -76px;
+}
+#echo-havoc {
+	top: 750px;
+	margin-left: 99px;
+}
+#echo-commander {
+	top: 750px;
+	margin-left: -427px;
+}
+#echo-elite {
+	top: 750px;
+	margin-left: -76px;
+}
+
+/* Rank Box Connection Styles */
+#basic-tanks:before {
+	border-right: 13px solid #789;
+	border-top: 13px solid #789;
+	border-top-right-radius: 26px;
+	bottom: 121px;
+	height: 81px;
+	right: 69px;
+	width: 441px;
+}
+#commander:before {
+	border-left: 13px solid #789;
+	border-top: 13px solid #789;
+	border-top-left-radius: 26px;
+	bottom: 122px;
+	height: 91px;
+	left: 69px;
+	width: 441px;
+}
+#combat-medic:before {
+	border-left: 13px solid #789;
+	border-top: 13px solid #789;
+	border-top-left-radius: 26px;
+	bottom: 121px;
+	height: 71px;
+	left: 69px;
+	width: 91px;
+}
+#combat-medic:after,
+#light-assault:after,
+#heavy-assault:after,
+#basic-tanks:after,
+#prowler:after,
+#lightning:after {
+	border-left: 13px solid #789;
+	height: 28px;
+	left: 68px;
+	top: 121px;
+	width: 0;
+}
+
+#engineer:after,
+#infiltrator:after,
+#max:after {
+	border-left: 13px solid #789;
+	height: 178px;
+	left: 58px;
+	top: 121px;
+	width: 0;
+	box-shadow: 0 0 5px #197576;
+}
+#heavy-assault:before {
+	border-right: 13px solid #789;
+	border-top: 13px solid #789;
+	border-top-right-radius: 26px;
+	bottom: 121px;
+	height: 81px;
+	right: 69px;
+	width: 91px;
+}
+#echo-specialist:before {
+	border-left: 13px solid #789;
+	border-top: 13px solid #789;
+	border-top-left-radius: 26px;
+	bottom: 122px;
+	height: 101px;
+	left: 78px;
+	width: 433px;
+}
+#sunderer:before {
+	border-left: 13px solid #789;
+	border-top: 13px solid #789;
+	border-top-left-radius: 26px;
+	bottom: 121px;
+	height: 380px;
+	left: 69px;
+	width: 92px;
+}
+#soldier:after,
+#veteran:after {
+	border-left: 13px solid #789;
+	height: 26px;
+	left: 69px;
+	top: 122px;
+	width: 93px;
+}
+
+#echo-covert-ops:before {
+	border-left: 13px solid #789;
+	border-top: 13px solid #789;
+	border-top-left-radius: 26px;
+	bottom: 122px;
+	height: 83px;
+	left: 78px;
+	width: 258px;
+}
+#echo-havoc:before {
+	border-left: 13px solid #789;
+	border-top: 13px solid #789;
+	border-top-left-radius: 26px;
+	bottom: 122px;
+	height: 65px;
+	left: 78px;
+	width: 83px;
+}

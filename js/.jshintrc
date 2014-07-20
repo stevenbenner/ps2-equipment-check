@@ -20,9 +20,11 @@
 
 	"globals": {
 		"Character": true,
-		"EventEmitter": true,
+		"Service": true,
+		"ItemLoader": true,
+		"OutfitLoader": true,
 		"MemberLoader": true,
-		"MemberTableBuilder": true,
+		"MemberReportBuilder": true,
 		"Qualifications": true
 	}
 }

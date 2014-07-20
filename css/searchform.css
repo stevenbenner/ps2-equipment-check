@@ -1,0 +1,63 @@
+/* Member Search Form Styles */
+#character-search {
+	display: none;
+	margin: 100px auto;
+	text-align: center;
+	width: 322px;
+}
+#character-search input {
+	background-color: #000;
+	border: 1px solid #197576;
+	padding: 10px;
+	vertical-align: top;
+}
+#character-search input[type=submit] {
+	background: linear-gradient(to bottom, rgba(9, 47, 49, 0.5) 0%, rgba(2, 7, 10, 0.5) 100%);
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	margin-top: 15px;
+	padding: 9px;
+}
+#character-search input[type=submit]:hover {
+	background: linear-gradient(to bottom, #12535a 0%, #010f10 100%);
+}
+
+#member-report #character-search {
+	margin: 0;
+	width: auto;
+	position: absolute;
+	right: 20px;
+	top: 14px;
+	z-index: 1;
+	text-align: left;
+}
+#member-report #character-search input[type=submit] {
+	margin-top: 0;
+}
+
+#character-search #character-name {
+	color: #4fd4e0;
+	width: 300px;
+}
+
+/* typeahead.js */
+.tt-hint {
+	width: 300px;
+}
+.tt-dropdown-menu {
+	background-color: #000;
+	border: 1px solid #197576;
+	border-top: none;
+	text-align: left;
+	width: 320px;
+	max-height: 100px;
+	overflow: auto;
+}
+.tt-suggestion {
+	cursor: pointer;
+	padding: 5px 10px;
+}
+.tt-cursor {
+	background-color: rgba(12, 52, 57, 0.5);
+}
