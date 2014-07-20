@@ -54,7 +54,8 @@ module.exports = function(grunt) {
 			}
 		},
 		clean: {
-			build: [ '<%= buildpath %>' ]
+			build: [ '<%= buildpath %>' ],
+			deploy: [ '*', '!{.editorconfig,.gitattributes,.gitignore,CNAME,node_modules,build}' ]
 		},
 		uglify: {
 			build: {
@@ -138,6 +139,26 @@ module.exports = function(grunt) {
 			favicon: {
 				src: [ 'favicon.ico' ],
 				dest: '<%= buildpath %>/favicon.ico'
+			},
+			deploy: {
+				expand: true,
+				cwd: '<%= buildpath %>/',
+				src: '**/*',
+				dest: './'
+			}
+		},
+		shell: {
+			checkoutpages: {
+				command: 'git checkout gh-pages'
+			},
+			addassets: {
+				command: [
+					'git add .',
+					'git commit -m "Publishing assets."'
+				].join(' && ')
+			},
+			checkoutmaster: {
+				command: 'git checkout master'
 			}
 		}
 	});
@@ -157,9 +178,11 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-jsonlint');
 	grunt.loadNpmTasks('grunt-jsonmin');
 	grunt.loadNpmTasks('grunt-smushit');
+	grunt.loadNpmTasks('grunt-shell');
 
 	// register grunt tasks
 	grunt.registerTask('default', [ 'test' ]);
 	grunt.registerTask('test', [ 'jsonlint', 'jshint', 'jscs', 'csslint' ]);
-	grunt.registerTask('build', [ 'test', 'clean', 'uglify', 'cssmin', 'jsonmin', 'smushit', 'copy', 'htmlmin' ]);
+	grunt.registerTask('build', [ 'test', 'clean:build', 'uglify', 'cssmin', 'jsonmin', 'smushit', 'copy:index', 'copy:favicon', 'htmlmin' ]);
+	grunt.registerTask('deploy', [ 'build', 'shell:checkoutpages', 'clean:deploy', 'copy:deploy', 'shell:addassets', 'shell:checkoutmaster' ]);
 };
