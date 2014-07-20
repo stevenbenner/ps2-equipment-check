@@ -69,7 +69,6 @@ function MemberReportBuilder(element, skills, items) {
 	}
 
 	function gradeCharacter(character) {
-
 		function checkCerts(rank) {
 			var certCount = {};
 
