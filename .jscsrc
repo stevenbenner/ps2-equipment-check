@@ -33,6 +33,7 @@
 	"disallowSpacesInFunctionDeclaration": {
 		"beforeOpeningRoundBrace": true
 	},
+	"disallowSpacesInCallExpression": true,
 	"requireBlocksOnNewline": true,
 	"disallowPaddingNewlinesInBlocks": true,
 	"disallowEmptyBlocks": true,
@@ -41,6 +42,7 @@
 	"requireSpacesInsideArrayBrackets": "all",
 	"disallowDanglingUnderscores": true,
 	"disallowSpaceAfterObjectKeys": true,
+	"requireSpaceBeforeObjectValues": true,
 	"requireCommaBeforeLineBreak": true,
 	"requireOperatorBeforeLineBreak": true,
 	"disallowSpaceAfterPrefixUnaryOperators": true,
@@ -53,11 +55,13 @@
 	"disallowKeywords": [ "with" ],
 	"disallowMultipleLineStrings": true,
 	"disallowMultipleLineBreaks": true,
+	"disallowNewlineBeforeBlockStatements": true,
 	"validateQuoteMarks": {
 		"mark": "'",
 		"escape": true
 	},
 	"validateIndentation": "\t",
+	"validateParameterSeparator": ", ",
 	"disallowMixedSpacesAndTabs": true,
 	"disallowTrailingWhitespace": true,
 	"disallowTrailingComma": true,
@@ -67,6 +71,7 @@
 	"safeContextKeyword": [ "me" ],
 	"requireDotNotation": true,
 	"disallowYodaConditions": true,
+	"requireSpaceAfterLineComment": true,
 	"validateJSDoc": {
 		"checkParamNames": true,
 		"checkRedundantParams": true,
