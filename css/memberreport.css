@@ -152,7 +152,7 @@ span.rank {
 }
 #powerTip p {
 	overflow: hidden;
-	margin-bottom: 15px;
+	margin-bottom: 20px;
 	-webkit-column-break-inside: avoid;
 	-moz-column-break-inside: avoid;
 	-ms-column-break-inside: avoid;
@@ -161,7 +161,6 @@ span.rank {
 	-moz-page-break-inside: avoid;
 	page-break-inside: avoid;
 	break-inside: avoid-column;
-	display: inline-block;
 }
 #powerTip p span:first-child {
 	color: aqua;
