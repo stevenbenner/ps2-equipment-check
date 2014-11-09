@@ -536,9 +536,9 @@
 		},
 		"advancedMobileStation": {
 			"name": "Sunderer Advanced Mobile Station (S-AMS)",
-			"skillLine": 4224,
+			"skillLine": 16889,
 			"skills": [
-				5871
+				23176
 			]
 		},
 		"blockadeArmor": {
