@@ -125,7 +125,7 @@ function error(err, showErrorText) {
 	var html = [
 		'<h2>Error</h2>',
 		'<p>',
-		'There was an error connecting to the SOE API. ',
+		'There was an error connecting to the API. ',
 		'The API servers might have gone down or something broke along the way. ',
 		'Please try again later.',
 		'</p>'

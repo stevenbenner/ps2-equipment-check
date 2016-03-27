@@ -1,7 +1,7 @@
 /* exported Service */
 
 var SERVICE_PROTO = 'https',
-	SERVICE_HOST = 'census.soe.com',
+	SERVICE_HOST = 'census.daybreakgames.com',
 	SERVICE_BASE = 'ps2:v2',
 	SERVICE_ID = 'soe';
 
